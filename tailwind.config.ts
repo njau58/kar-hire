@@ -19,7 +19,7 @@ export default {
       
       
         blob: "url('../../src/assets/images/blob.svg')",
-        blob2: "url('../../src/assets/images/blob2.png')",
+        blob2: "url('/public/images/blob2.png')",
       
 
 
