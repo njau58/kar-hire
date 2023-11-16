@@ -1,5 +1,4 @@
-import React from "react";
-import { FaCarSide } from "react-icons/fa";
+
 import { SiToyota } from "react-icons/si";
 import { SiHonda } from "react-icons/si";
 import { SiMazda } from "react-icons/si";
