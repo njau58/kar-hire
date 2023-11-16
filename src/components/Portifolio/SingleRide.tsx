@@ -1,13 +1,6 @@
-import React from "react";
 import { porche } from "../../assets/images";
-import {
-  FaCarBurst,
-  FaGear,
-  FaGears,
-  FaPeopleGroup,
-  FaUserGear,
-} from "react-icons/fa6";
-import { SlBag, SlPeople } from "react-icons/sl";
+import { FaCarBurst, FaGears } from "react-icons/fa6";
+import { SlPeople } from "react-icons/sl";
 import { CiBag1 } from "react-icons/ci";
 import Badge from "../Badge";
 import Button from "../Button";
@@ -17,10 +10,12 @@ const SingleRide = () => {
     <div className="shadow-lg container rounded-lg border max-w-96 ">
       <div className="h-[15rem] relative">
         <div className="absolute right-0">
-        <Badge variant='Hire'/>
-
+          <Badge variant="Hire" />
         </div>
-        <img src={porche} className="rounded-t-lg h-full w-full object-cover   transition duration-1000 ease-in-out " />
+        <img
+          src={porche}
+          className="rounded-t-lg h-full w-full object-cover   transition duration-1000 ease-in-out "
+        />
       </div>
 
       <div className="flex flex-col items-start gap-4 mt-4 p-6">
@@ -53,12 +48,14 @@ const SingleRide = () => {
         </div>
         <hr className="w-full"></hr>
 
-        <p><span className="font-bold text-primary">KSH 7,000</span> /day</p>
-       <div className="w-full flex justify-center"> <Button theme='filled' text='Book Now'/></div> 
+        <p>
+          <span className="font-bold text-primary">KSH 7,000</span> /day
+        </p>
+        <div className="w-full flex justify-center">
+          {" "}
+          <Button theme="filled" text="Book Now" />
+        </div>
       </div>
-    
-
-    
     </div>
   );
 };
