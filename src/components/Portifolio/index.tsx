@@ -4,8 +4,8 @@ import { SiMazda } from "react-icons/si";
 import { SiNissan } from "react-icons/si";
 import SingleRide from "./SingleRide";
 import vihicles, { CarProps } from "../../services/allVihicles";
-import { useState, useEffect } from "react";
-import availableVihicles from "../../services/allVihicles";
+import { useState } from "react";
+
 
 export interface BrandProps {
   brand_name: string;
