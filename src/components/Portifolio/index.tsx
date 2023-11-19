@@ -1,22 +1,27 @@
-
 import { SiToyota } from "react-icons/si";
 import { SiHonda } from "react-icons/si";
 import { SiMazda } from "react-icons/si";
 import { SiNissan } from "react-icons/si";
 import SingleRide from "./SingleRide";
+import vihicles, { CarProps } from "../../services/allVihicles";
+import { useState, useEffect } from "react";
+import availableVihicles from "../../services/allVihicles";
+
 export interface BrandProps {
-  brand_name?: string;
+  brand_name: string;
   logo?: any;
 }
 
 const Portifolio: React.FC<BrandProps> = () => {
+  const [filteredVihicles, setVihicles] = useState<CarProps[]>(vihicles);
+
   const brands: BrandProps[] = [
     {
       brand_name: "Toyota",
       logo: <SiToyota />,
     },
     {
-      brand_name: "Nissa",
+      brand_name: "Nissan",
       logo: <SiNissan />,
     },
     {
@@ -28,7 +33,7 @@ const Portifolio: React.FC<BrandProps> = () => {
       logo: <SiMazda />,
     },
     {
-      brand_name: "Nissa",
+      brand_name: "Nissan",
       logo: <SiNissan />,
     },
     {
@@ -41,6 +46,15 @@ const Portifolio: React.FC<BrandProps> = () => {
     },
   ];
 
+  const handleBrandClick = (brand_name: string) => {
+    console.log(brand_name);
+    const FilteredBrands = vihicles.filter((vihicle) => {
+      return vihicle.brand === brand_name;
+    });
+
+    setVihicles(FilteredBrands);
+  };
+
   return (
     <section className=" relative  my-24 max-w-6xl lg:mx-auto mx-4 flex items-center justify-center overflow-hidden">
       <div className="flex flex-col items-center justify-center gap-4   ">
@@ -49,25 +63,40 @@ const Portifolio: React.FC<BrandProps> = () => {
           Explore Our Rides
         </h2>
 
+        <img />
+
         {/* brands section */}
 
-        <div className="  py-12  flex gap-4 lg:w-[100%] overflow-x-auto w-72  m  px-4 scrollbar-thin  scrollbar-thumb-primary scrollbar-thumb-rounded-lg scrollbar-track-red-50 ">
-          {brands?.map((brand: BrandProps) => {
+        <div className="  py-3   flex gap-4 lg:w-[100%] overflow-x-auto w-96  items-center justify-center   px-4 scrollbar-thin  scrollbar-thumb-primary scrollbar-thumb-rounded-lg scrollbar-track-red-50 ">
+          {brands?.map((brand: BrandProps, index) => {
             return (
-              <div className=" flex flex-row items-center justify-center bg-white py-3 shadow-xl px-6 rounded-md border gap-2">
+              <button
+                key={index}
+                onClick={() => handleBrandClick(brand.brand_name)}
+                className=" flex flex-row items-center justify-center bg-white py-3 shadow-xl px-6 rounded-md border gap-2 cursor-pointer"
+              >
                 <span className="text-xl">{brand.logo}</span>
                 <p className="font-bold ">{brand.brand_name}</p>
-              </div>
+              </button>
             );
           })}
         </div>
 
         {/* list of all available cars */}
 
-        <div>
-
-          <SingleRide/>
-      
+        <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16   max-w-6xl overflow-hidden ">
+          {filteredVihicles?.map((vihicle, index) => {
+            return (
+              <SingleRide
+                imageSrc={vihicle.imageSrc}
+                brand={vihicle.brand}
+                vihicle_name={vihicle.vihicle_name}
+                transmission_type={vihicle.transmission_type}
+                badge={vihicle.badge}
+                hire_price={vihicle.hire_price}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
