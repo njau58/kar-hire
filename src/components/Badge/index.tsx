@@ -1,5 +1,5 @@
 interface BadgeProps {
-  variant: "Sale" | "Hire";
+  variant: "Sale" | "Hire" | undefined;
 }
 
 const Badge = ({ variant }: BadgeProps) => {

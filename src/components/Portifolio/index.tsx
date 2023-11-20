@@ -82,12 +82,13 @@ const Portifolio: React.FC<BrandProps> = () => {
           })}
         </div>
 
-        {/* list of all available cars */}
+        {/* list of all available/filtered cars */}
 
         <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16   max-w-6xl overflow-hidden ">
           {filteredVihicles?.map((vihicle, index) => {
             return (
               <SingleRide
+              key={index}
                 imageSrc={vihicle.imageSrc}
                 brand={vihicle.brand}
                 vihicle_name={vihicle.vihicle_name}

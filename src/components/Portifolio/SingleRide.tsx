@@ -7,16 +7,18 @@ import { CarProps } from "../../services/allVihicles";
 
 const SingleRide = ({
   imageSrc,
-  brand,
   vihicle_name,
   transmission_type,
   badge,
   hire_price,
 }: CarProps) => {
+
+  console.log(typeof(badge))
   return (
     <div className="shadow-lg container rounded-lg border max-w-2xl ">
       <div className="h-[9rem] relative">
         <div className="absolute right-0">
+          
           <Badge variant={badge} />
         </div>
         <img
