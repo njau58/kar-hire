@@ -12,7 +12,7 @@ export interface BrandProps {
   logo?: any;
 }
 
-const Portifolio: React.FC<BrandProps> = () => {
+const Portifolio: React.FC= () => {
   const [filteredVihicles, setVihicles] = useState<CarProps[]>(vihicles);
 
   const brands: BrandProps[] = [
@@ -47,7 +47,6 @@ const Portifolio: React.FC<BrandProps> = () => {
   ];
 
   const handleBrandClick = (brand_name: string) => {
-    console.log(brand_name);
     const FilteredBrands = vihicles.filter((vihicle) => {
       return vihicle.brand === brand_name;
     });
@@ -68,7 +67,7 @@ const Portifolio: React.FC<BrandProps> = () => {
         {/* brands section */}
 
         <div className="  py-3   flex gap-4 lg:w-[100%] overflow-x-auto w-96  items-center justify-center   px-4 scrollbar-thin  scrollbar-thumb-primary scrollbar-thumb-rounded-lg scrollbar-track-red-50 ">
-          {brands?.map((brand: BrandProps, index) => {
+          {brands?.map((brand,index) => {
             return (
               <button
                 key={index}
