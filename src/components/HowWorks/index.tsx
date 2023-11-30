@@ -8,7 +8,7 @@ const HowWorks = () => {
       <div className="relative z-10">
         <div className="flex flex-col items-center justify-center gap-4   ">
           <p className="text-center font-bold text-primary">How It Works</p>
-          <h2 className="text-3xl text-gray-950 font-bold g:text-5xl">
+          <h2 className="text-3xl text-gray-950 font-bold md:text-5xl">
             Our Working Steps
           </h2>
         </div>

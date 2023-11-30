@@ -4,8 +4,9 @@ import blob2 from "./blob2.svg";
 import mclaren from "./mclaren_big.png"
 import mclaren_small from "./mclaren.png"
 import porche from "./porshe.jpeg"
+import jeep from "./jeep.png"
 
 
 
 
-export { car_logo, blob , blob2, mclaren, mclaren_small, porche};
+export { car_logo, blob , blob2, mclaren, mclaren_small, porche, jeep};

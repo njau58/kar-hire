@@ -6,13 +6,12 @@ import SingleRide from "./SingleRide";
 import vihicles, { CarProps } from "../../services/allVihicles";
 import { useState } from "react";
 
-
 export interface BrandProps {
   brand_name: string;
   logo?: any;
 }
 
-const Portifolio: React.FC= () => {
+const Portifolio: React.FC = () => {
   const [filteredVihicles, setVihicles] = useState<CarProps[]>(vihicles);
 
   const brands: BrandProps[] = [
@@ -66,26 +65,24 @@ const Portifolio: React.FC= () => {
 
         {/* brands section */}
 
-    
-
-        <div className="  py-4   lg:w-[90%] overflow-x-scroll w-72 items-center justify-center   px-4 scrollbar-thin hover:scrollbar-thumb-primary/80
-          scrollbar-thumb-primary scrollbar-thumb-rounded-lg scrollbar-track-red-50 ">
-
-            <div className="w-full flex gap-4 ">
-            {brands?.map((brand,index) => {
-            return (
-              <button
-                key={index}
-                onClick={() => handleBrandClick(brand.brand_name)}
-                className=" flex flex-row items-center justify-center bg-white py-3 border shadow-xl px-6 rounded-md  gap-2 cursor-pointer hover:scale-110  transition duration-300 ease-in-out "
-              >
-                <span className="text-xl">{brand.logo}</span>
-                <p className="font-bold ">{brand.brand_name}</p>
-              </button>
-            );
-          })}
-            </div>
-    
+        <div
+          className="  py-4   lg:w-[90%] overflow-x-scroll w-72 items-center justify-center   px-4 scrollbar-thin hover:scrollbar-thumb-primary/80
+          scrollbar-thumb-primary scrollbar-thumb-rounded-lg scrollbar-track-red-50 "
+        >
+          <div className="w-full flex gap-4 ">
+            {brands?.map((brand, index) => {
+              return (
+                <button
+                  key={index}
+                  onClick={() => handleBrandClick(brand.brand_name)}
+                  className=" flex flex-row items-center justify-center bg-white py-3 border shadow-xl px-6 rounded-md  gap-2 cursor-pointer hover:scale-110  transition duration-300 ease-in-out "
+                >
+                  <span className="text-xl">{brand.logo}</span>
+                  <p className="font-bold ">{brand.brand_name}</p>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* list of all available/filtered cars */}
@@ -94,7 +91,7 @@ const Portifolio: React.FC= () => {
           {filteredVihicles?.map((vihicle, index) => {
             return (
               <SingleRide
-              key={index}
+                key={index}
                 imageSrc={vihicle.imageSrc}
                 brand={vihicle.brand}
                 vihicle_name={vihicle.vihicle_name}
