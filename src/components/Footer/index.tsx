@@ -1,4 +1,6 @@
 import generateNavItems, { Item } from "../Navbar/NavItems";
+import { MdEmail } from "react-icons/md";
+
 import { useState, useEffect } from "react";
 // import { ScrollLink as Link } from "react-scroll";
 import { FaFacebook } from "react-icons/fa6";
@@ -6,6 +8,9 @@ import { FaTelegram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa6";
+import { ImLocation } from "react-icons/im";
+import { MdLocalPhone } from "react-icons/md";
+import Button from "../Button";
 
 const Footer = () => {
   const [nav_items, setNavItems] = useState<Item[]>([]);
@@ -14,7 +19,6 @@ const Footer = () => {
     setNavItems(generateNavItems());
   }, []);
 
-  console.log("Items", nav_items);
 
   return (
     <section
@@ -28,7 +32,7 @@ const Footer = () => {
           <ul className="space-y-4 text-left">
             {nav_items?.map((item) => {
               return (
-                <li className=" cursor-pointer hover:underline tansition duration-7s00 ease-in-out">
+                <li className=" cursor-pointer hover:underline tansition duration-700 ease-in-out">
                   <a>{item.name}</a>
                 </li>
               );
@@ -36,19 +40,29 @@ const Footer = () => {
           </ul>
         </div>
         <div className=" flex flex-col gap-6">
-          <h4 className="text-2xl md:4xl font-semibold">Quick Links</h4>
-
-          <ul className="space-y-4 text-left">
-            {nav_items?.map((item) => {
-              return (
-                <li className=" cursor-pointer hover:underline tansition duration-7s00 ease-in-out">
-                  <a>{item.name}</a>
-                </li>
-              );
-            })}
-          </ul>
+          <h4 className="text-2xl md:4xl font-semibold text-start">Contacts</h4>
+          <div className="flex flex-col space-y-4 items-start  ">
+            <div className="flex flex-row space-x-4 items-center">
+              <div className="text-xl text-primary">
+                <MdLocalPhone />
+              </div>
+              <div className="text-sm">+254706338454 </div>
+            </div>
+            <div className="flex flex-row space-x-4 items-center">
+              <div className="text-xl text-primary">
+                <ImLocation />
+              </div>
+              <div className="text-sm"> Nairobi · Kenya.</div>
+            </div>
+            <div className="flex flex-row space-x-4 items-center">
+              <div className="text-xl text-primary">
+                <MdEmail />
+              </div>
+              <div className="text-sm">info@softleafapplications.co.ke</div>
+            </div>
+          </div>
         </div>
-        <div className=" flex flex-col gap-6">
+        <div className=" flex flex-col gap-12">
           <h4 className="text-2xl md:4xl font-semibold text-start">Social</h4>
 
           <div className=" flex flex-row gap-4 text-left">
@@ -65,17 +79,32 @@ const Footer = () => {
               <FaFacebook />
             </div>
           </div>
-     
+          <div className="">
+            <h3 className="text-start font-semibold text-xl"> Get The Latest From Us</h3>
+            <div className="relative h-16 w-96 ">
+            <input className=" px-2 w-full h-full rounded-md border" placeholder="Your email address..."></input>
+            <div className="absolute top-3 right-2"> <Button  theme="filled" text="Subscribe Now"></Button></div>
+            </div>
+       
+
+
         </div>
 
-       
+
+
+        </div>
       </div>
 
       <hr className="my-12 bg-black w-full "></hr>
 
       <div className="">
-        <p>Designed with <span className="inline-block text-primary"><FaHeart></FaHeart></span> by Sofleafapplications </p>
-
+        <p>
+          Designed with{" "}
+          <span className="inline-block text-primary">
+            <FaHeart></FaHeart>
+          </span>{" "}
+          by Sofleafapplications{" "}
+        </p>
       </div>
     </section>
   );
