@@ -1,6 +1,6 @@
 import generateNavItems, { Item } from "../Navbar/NavItems";
 import { useState, useEffect } from "react";
-import { ScrollLink as Link } from "react-scroll";
+// import { ScrollLink as Link } from "react-scroll";
 import { FaFacebook } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
@@ -26,7 +26,7 @@ const Footer = () => {
           <h4 className="text-2xl md:4xl font-semibold">Quick Links</h4>
 
           <ul className="space-y-4 text-left">
-            {nav_items?.map((item, idx) => {
+            {nav_items?.map((item) => {
               return (
                 <li className=" cursor-pointer hover:underline tansition duration-7s00 ease-in-out">
                   <a>{item.name}</a>
@@ -39,7 +39,7 @@ const Footer = () => {
           <h4 className="text-2xl md:4xl font-semibold">Quick Links</h4>
 
           <ul className="space-y-4 text-left">
-            {nav_items?.map((item, idx) => {
+            {nav_items?.map((item) => {
               return (
                 <li className=" cursor-pointer hover:underline tansition duration-7s00 ease-in-out">
                   <a>{item.name}</a>
