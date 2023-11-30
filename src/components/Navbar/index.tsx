@@ -12,7 +12,7 @@ const NavBar = () => {
   const [activeMenu, setActiveMenu] = useState<Boolean>(false);
   const [scrollThreshold, setScrollThreshold] = useState<Boolean>(false);
 
-  console.log(scrollThreshold)
+  console.log(scrollThreshold);
 
   //checks for when scrolled 100px on y-axis
 
@@ -34,35 +34,36 @@ const NavBar = () => {
 
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
-  
-
   return (
     <>
-     {activeMenu && isMobile&&<MobileMenu setActiveMenu={setActiveMenu} />}
-    <nav className={` ${scrollThreshold?"shadow-sm bg-white/30 backdrop-blur-lg  ":""} w-full fixed   px-4  top-0  z-40 transition duration-700 ease-in-out  `}>
-      <div className="flex     flex-row   py-8  mx-auto justify-between items-center  max-w-6xl  ">
-        <Logo />
-        {isMobile ? (
-          <>
-            <MenuIcon variant="open" setActiveMenu={setActiveMenu} />
-           
-          </>
-        ) : (
-          <div className="flex flex-row gap-9  items-center justify-center">
-            {nav_items.map((item: Item) => {
-              return (
-                <ul key={item.name}>
-                  <li className={item.styles}>{item.name}</li>
-                </ul>
-              );
-            })}
-            <div className="text-md p-1.5 text-center text-white  bg-red-500 rounded-full hover:scale-110 transition duration-300  ease-in-out">
-              <CiSearch />
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+      {activeMenu && isMobile && <MobileMenu setActiveMenu={setActiveMenu} />}
+      <nav
+        className={` ${
+          scrollThreshold ? "shadow-sm bg-white/30 backdrop-blur-lg  " : ""
+        } w-full fixed   px-4  top-0  z-40 transition duration-700 ease-in-out  `}
+      >
+        <div className="flex     flex-row   py-8  mx-auto justify-between items-center  max-w-6xl  ">
+          <Logo />
+          {isMobile ? (
+            <>
+              <MenuIcon variant="open" setActiveMenu={setActiveMenu} />
+            </>
+          ) : (
+            <ul className="flex flex-row gap-9  items-center justify-center">
+              {nav_items.map((item: Item) => {
+                return (
+                  <li className={item.styles} key={item.name}>
+                    {item.name}
+                  </li>
+                );
+              })}
+              <div className="text-md p-1.5 text-center text-white  bg-red-500 rounded-full hover:scale-110 transition duration-300  ease-in-out">
+                <CiSearch />
+              </div>
+            </ul>
+          )}
+        </div>
+      </nav>
     </>
   );
 };
