@@ -6,7 +6,7 @@ import MenuIcon from "../MenuIcon";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../utils/responsive";
 import MobileMenu from "./MobileMenu";
-import { CiSearch } from "react-icons/ci";
+// import { CiSearch } from "react-icons/ci";
 import Button from "../Button";
 const NavBar = () => {
   const [nav_items, setNavItems] = useState<Item[]>([]);
