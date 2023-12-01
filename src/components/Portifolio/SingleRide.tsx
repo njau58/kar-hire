@@ -15,16 +15,20 @@ const SingleRide = ({
 
   console.log(typeof(badge))
   return (
-    <div className="shadow-lg container rounded-lg border max-w-2xl ">
-      <div className="h-[9rem] relative">
+    <div className="shadow-lg  relative  rounded-lg border max-w-2xl ">
+      <div className="h-[9rem] ">
         <div className="absolute right-0">
           
           <Badge variant={badge} />
         </div>
+        <div className=" overflow-hidden h-full w-full">
         <img
           src={imageSrc}
-          className="rounded-t-lg h-full w-full object-cover   transition duration-1000 ease-in-out "
+          className="rounded-t-lg h-full w-full object-cover   transition duration-500 ease-in-out  hover:scale-110"
         />
+
+        </div>
+     
       </div>
 
       <div className="flex flex-col items-start gap-3 mt-4 p-4">
