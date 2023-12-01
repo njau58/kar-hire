@@ -13,7 +13,6 @@ const SingleRide = ({
   hire_price,
 }: CarProps) => {
 
-  console.log(typeof(badge))
   return (
     <div className="shadow-lg  relative  rounded-lg border max-w-2xl ">
       <div className="h-[9rem] ">

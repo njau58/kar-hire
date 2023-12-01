@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
           </div>
           <h1 className="text-gray-950 max-w-sm lg:max-w-xl font-bold text-3xl lg:text-5xl leading-normal text-start">
             {" "}
-            Hire, Buy or Sell The Best Qulity' Cars With Us
+            Hire Your Ride  Across Kenya With Us
           </h1>
           <p className="text-gray-700 lg:max-w-xl max-w-sm text-start text-sm lg:text-base">
             Why do we use it? It is a long established fact that a reader will
@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
           </p>
           <div className="flex flex-row gap-4 w-full max-w-sm">
             <Button theme="filled" text="Hire Your Ride" />
-            <Button theme="outlined" text="Sell Your Car" />
+            <Button theme="outlined" text="Become A Partner" />
           </div>
         </div>
 

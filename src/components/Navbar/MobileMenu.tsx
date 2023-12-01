@@ -2,6 +2,7 @@ import generateNavItems from "./NavItems";
 import { useState, useEffect } from "react";
 import { Item } from "./NavItems";
 import MenuIcon from "../MenuIcon";
+import Button from "../Button";
 
 interface Props {
   setActiveMenu: React.Dispatch<React.SetStateAction<Boolean>>;
@@ -24,7 +25,13 @@ const MobileMenu: React.FC<Props> = ({ setActiveMenu }) => {
             </ul>
           );
         })}
+           <div className=" flex flex-col gap-4 mt-12 w-full">
+      <Button theme="text" text="LogIn"></Button>
+              <Button theme="filled" text="SignUp"></Button>
       </div>
+      </div>
+
+   
     </div>
   );
 };

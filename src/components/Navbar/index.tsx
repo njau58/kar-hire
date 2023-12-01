@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../utils/responsive";
 import MobileMenu from "./MobileMenu";
 import { CiSearch } from "react-icons/ci";
+import Button from "../Button";
 const NavBar = () => {
   const [nav_items, setNavItems] = useState<Item[]>([]);
   const [activeMenu, setActiveMenu] = useState<Boolean>(false);
@@ -57,12 +58,20 @@ const NavBar = () => {
                   </li>
                 );
               })}
-              <div className="text-md p-1.5 text-center text-white  bg-red-500 rounded-full hover:scale-110 transition duration-300  ease-in-out">
+              {/* <div className="text-md p-1.5 text-center text-white  bg-red-500 rounded-full hover:scale-110 transition duration-300  ease-in-out">
                 <CiSearch />
-              </div>
+              </div> */}
+           
+
             </ul>
           )}
+          <div className=" hidden  md:flex gap-4 flex-col md:flex-row">
+          <Button theme="text" text="LogIn"></Button>
+              <Button theme="filled" text="SignUp"></Button>
+          </div>
+          
         </div>
+        
       </nav>
     </>
   );
