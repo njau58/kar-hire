@@ -22,7 +22,7 @@ const MenuIcon: React.FC<MenuProps> = ({ setActiveMenu, variant }) => {
     ) : (
       <div
         onClick={handleOnclickMenu}
-        className=" w-9 h-9  absolute right-16 top-8 flex flex-col items-center justify-center   ease-in-out transition-all duration-300"
+        className=" w-9 h-9  absolute right-4 top-8 flex flex-col items-center justify-center   ease-in-out transition-all duration-300"
       >
         <span className="w-full py-0.5 rotate-45 absolute bg-red-500 rounded-full"></span>
 

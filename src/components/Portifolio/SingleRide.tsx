@@ -14,8 +14,8 @@ const SingleRide = ({
 }: CarProps) => {
 
   return (
-    <div className="shadow-lg  relative  rounded-lg border max-w-2xl ">
-      <div className="h-[9rem] ">
+    <div className="shadow-lg  relative  rounded-lg border bg-white max-w-lg mx-auto  w-full  ">
+      <div className="h-[18rem] ">
         <div className="absolute right-0">
           
           <Badge variant={badge} />
@@ -23,7 +23,7 @@ const SingleRide = ({
         <div className=" overflow-hidden h-full w-full">
         <img
           src={imageSrc}
-          className="rounded-t-lg h-full w-full object-cover   transition duration-500 ease-in-out  hover:scale-110"
+          className="rounded-t-lg h-full w-full object-cover    transition duration-500 ease-in-out  hover:scale-110"
         />
 
         </div>
