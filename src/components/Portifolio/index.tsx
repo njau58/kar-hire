@@ -1,49 +1,57 @@
-import { SiToyota } from "react-icons/si";
-import { SiHonda } from "react-icons/si";
-import { SiMazda } from "react-icons/si";
-import { SiNissan } from "react-icons/si";
+
 import SingleRide from "./SingleRide";
 import vihicles, { CarProps } from "../../services/allVihicles";
 import { useState } from "react";
-
+import {
+  coupe,
+  hatchback,
+  pickup,
+  sedan,
+  station_wagon,
+  suv,
+  van,
+} from "../../assets/images";
 
 export interface BrandProps {
   brand_name: string;
-  logo?: any;
+  image?: any;
 }
 
-const Portifolio: React.FC= () => {
+const Portifolio: React.FC = () => {
   const [filteredVihicles, setVihicles] = useState<CarProps[]>(vihicles);
 
   const brands: BrandProps[] = [
     {
-      brand_name: "Toyota",
-      logo: <SiToyota />,
+      brand_name: "SUV",
+      image: suv,
     },
     {
-      brand_name: "Nissan",
-      logo: <SiNissan />,
+      brand_name: "Sedan",
+      image: sedan,
+    },
+
+    {
+      brand_name: "Hatchback",
+      image: hatchback,
+    },
+
+    {
+      brand_name: "StationWagon",
+      image: station_wagon,
     },
     {
-      brand_name: "Honda",
-      logo: <SiHonda />,
+      brand_name: "Pickup",
+      image: pickup,
     },
     {
-      brand_name: "Mazda",
-      logo: <SiMazda />,
+      brand_name: "Van",
+      image: van,
     },
     {
-      brand_name: "Nissan",
-      logo: <SiNissan />,
+      brand_name: "Coupe",
+      image: coupe,
     },
-    {
-      brand_name: "Honda",
-      logo: <SiHonda />,
-    },
-    {
-      brand_name: "Mazda",
-      logo: <SiMazda />,
-    },
+   
   ];
 
   const handleBrandClick = (brand_name: string) => {
@@ -59,42 +67,49 @@ const Portifolio: React.FC= () => {
       <div className="flex flex-col items-center justify-center gap-4   w-full mx-auto  ">
         <p className="text-center font-bold text-primary">Choose Your Ride</p>
         <h2 className="text-3xl text-gray-950 font-bold g:text-5xl">
-          Explore Our Rides
+          Explore Our Rides By Type
         </h2>
 
-        <img />
-
-        {/* brands section */}
-
     
 
-        <div className="  py-4   lg:w-[90%] overflow-x-scroll w-72 items-center justify-center   px-4 scrollbar-thin hover:scrollbar-thumb-primary/80
-          scrollbar-thumb-primary scrollbar-thumb-rounded-lg scrollbar-track-red-50 ">
-
-            <div className="w-full flex gap-4 ">
-            {brands?.map((brand,index) => {
+  
+        <div
+          className="grid grid-flow-col grid-rows-2 pb-3 overflow-x-auto overflow-y-hidden  py-4   lg:w-[90%]  w-96  md:grid-rows-1 gap-x-4 gap-y-8
+          hover:scrollbar-thumb-primary/80 scrollbar-thumb-rounded-lg scrollbar-track-red-50  scrollbar-thumb-primary 
+        scrollbar-thin"
+        >
+          {brands?.map((brand, index) => {
             return (
-              <button
+              <a
                 key={index}
                 onClick={() => handleBrandClick(brand.brand_name)}
-                className=" flex flex-row items-center justify-center bg-white py-3 border shadow-xl px-6 rounded-md  gap-2 cursor-pointer hover:scale-110  transition duration-300 ease-in-out "
+                className="flex pb-4 w-44 flex-col h-40  items-center duration-200 ease-in-out border-[0.5px] hover:border-[1px] border-gray-300 rounded-md cursor-pointer hover:scale-105 "
               >
-                <span className="text-xl">{brand.logo}</span>
-                <p className="font-bold ">{brand.brand_name}</p>
-              </button>
+                <img
+                  alt={brand.brand_name}
+                  loading="lazy"
+                  width="266"
+                  height="240"
+                  decoding="async"
+                  data-nimg="1"
+                  className="w-fit"
+                  src={suv}
+                ></img>
+                <span className="relative font-semibold capitalize -top-8 text-motokaa-primary">
+                  {brand.brand_name}
+                </span>
+              </a>
             );
           })}
-            </div>
-    
         </div>
 
         {/* list of all available/filtered cars */}
 
-        <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8    max-w-6xl w-full overflow-hidden ">
+        <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8  mt-16   max-w-6xl w-full overflow-hidden ">
           {filteredVihicles?.map((vihicle, index) => {
             return (
               <SingleRide
-              key={index}
+                key={index}
                 imageSrc={vihicle.imageSrc}
                 brand={vihicle.brand}
                 vihicle_name={vihicle.vihicle_name}
