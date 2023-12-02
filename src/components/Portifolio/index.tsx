@@ -105,7 +105,7 @@ const Portifolio: React.FC = () => {
             <div className=" col-span-3 text-center w-full h-full  mx-auto
             mb-16   max-w-6xl">
 
-              <p className="text-center text-xl">No Vihicle(s) of the selected type at the moment.</p>
+              <p className="text-center ">No Vihicle(s) of the selected type at the moment.</p>
 
 
             </div>
