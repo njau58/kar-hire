@@ -12,7 +12,7 @@ import {
 } from "../../assets/images";
 
 export interface BrandProps {
-  brand_name: string;
+  type: string;
   image?: any;
 }
 
@@ -21,40 +21,40 @@ const Portifolio: React.FC = () => {
 
   const brands: BrandProps[] = [
     {
-      brand_name: "SUV",
+      type: "Suv",
       image: suv,
     },
     {
-      brand_name: "Sedan",
+      type: "Sedan",
       image: sedan,
     },
 
     {
-      brand_name: "Hatchback",
+      type: "Hatchback",
       image: hatchback,
     },
 
     {
-      brand_name: "StationWagon",
+      type: "StationWagon",
       image: station_wagon,
     },
     {
-      brand_name: "Pickup",
+      type: "Pickup",
       image: pickup,
     },
     {
-      brand_name: "Van",
+      type: "Van",
       image: van,
     },
     {
-      brand_name: "Coupe",
+      type: "Coupe",
       image: coupe,
     },
   ];
 
   const handleBrandClick = (brand_name: string) => {
     const FilteredBrands = vihicles.filter((vihicle) => {
-      return vihicle.brand === brand_name;
+      return vihicle.type === brand_name;
     });
 
     setVihicles(FilteredBrands);
@@ -77,11 +77,11 @@ const Portifolio: React.FC = () => {
             return (
               <a
                 key={index}
-                onClick={() => handleBrandClick(brand.brand_name)}
+                onClick={() => handleBrandClick(brand.type)}
                 className="flex pb-4 w-44 flex-col h-36  items-center duration-200 ease-in-out border-[0.5px] hover:border-[1px] border-gray-300 rounded-md cursor-pointer hover:scale-105 "
               >
                 <img
-                  alt={brand.brand_name}
+                  alt={brand.type}
                   loading="lazy"
                   width="150"
                   height="150"
@@ -90,8 +90,8 @@ const Portifolio: React.FC = () => {
                   className="w-"
                   src={brand.image}
                 ></img>
-                <span className="relative font-semibold capitalize -top-8 text-motokaa-primary">
-                  {brand.brand_name}
+                <span className="relative font-semibold capitalize -top-8 ">
+                  {brand.type}
                 </span>
               </a>
             );
@@ -100,20 +100,33 @@ const Portifolio: React.FC = () => {
 
         {/* list of all available/filtered cars */}
 
-        <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8  mt-16   max-w-6xl w-full overflow-hidden ">
-          {filteredVihicles?.map((vihicle, index) => {
-            return (
-              <SingleRide
-                key={index}
-                imageSrc={vihicle.imageSrc}
-                brand={vihicle.brand}
-                vihicle_name={vihicle.vihicle_name}
-                transmission_type={vihicle.transmission_type}
-                badge={vihicle.badge}
-                hire_price={vihicle.hire_price}
-              />
-            );
-          })}
+        <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8  mt-16   max-w-6xl w-full overflow-hidden  ">
+          {filteredVihicles.length === 0 ? (
+            <div className=" col-span-3 text-center w-full h-full  mx-auto
+            mb-16   max-w-6xl">
+
+              <p className="text-center text-xl">No Vihicle(s) of the selected type at the moment.</p>
+
+
+            </div>
+          ) : (
+            <>
+              {" "}
+              {filteredVihicles?.map((vihicle, index) => {
+                return (
+                  <SingleRide
+                    key={index}
+                    imageSrc={vihicle.imageSrc}
+                    type={vihicle.type}
+                    vihicle_name={vihicle.vihicle_name}
+                    transmission_type={vihicle.transmission_type}
+                    badge={vihicle.badge}
+                    hire_price={vihicle.hire_price}
+                  />
+                );
+              })}
+            </>
+          )}
         </div>
       </div>
     </section>

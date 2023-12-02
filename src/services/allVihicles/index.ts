@@ -3,9 +3,8 @@ import { porche, mclaren } from "../../assets/images"
 
 export interface CarProps{
 
-    brand?:string
+    type?:string
     vihicle_name?:string
-    sale_price?:number
     hire_price?:number
     year_manufatured?:number
     no_of_passangers?:number
@@ -21,7 +20,7 @@ export interface CarProps{
         const vihicles:CarProps[]=[
             {
 
-                brand:'Toyota',
+                type:'Sedan',
                 vihicle_name:'Toyota Premio',
                 transmission_type:'manual',
                 badge:'Hire',
@@ -31,7 +30,7 @@ export interface CarProps{
             },
             {
 
-                brand:'Toyota',
+                type:'Coupe',
                 vihicle_name:'Toyota Noah',
                 transmission_type:'auto',
                 badge:'Hire',
@@ -40,7 +39,7 @@ export interface CarProps{
             },
             {
 
-                brand:'Toyota',
+                type:'Van',
                 vihicle_name:'Toyota Voxy',
                 transmission_type:'manual',
                 badge:'Hire',
@@ -49,7 +48,7 @@ export interface CarProps{
             },
             {
 
-                brand:'Toyota',
+                type:'Suv',
                 vihicle_name:'Toyota Prado',
                 transmission_type:'manual',
                 badge:'Hire',
@@ -59,7 +58,7 @@ export interface CarProps{
 
             {
 
-                brand:'Toyota',
+                type:'Sedan',
                 vihicle_name:'Toyota Axio',
                 transmission_type:'manual',
                 badge:'Hire',
@@ -69,7 +68,7 @@ export interface CarProps{
 
             {
 
-                brand:'Honda',
+                type:'Suv',
                 vihicle_name:'Honda CRV',
                 transmission_type:'manual',
                 badge:'Hire',
@@ -78,7 +77,7 @@ export interface CarProps{
             },
             {
 
-                brand:'Honda',
+                type:'Suv',
                 vihicle_name:'Honda CRV3',
                 transmission_type:'manual',
                 badge:'Hire',
