@@ -1,6 +1,6 @@
-import { FaCarBurst, FaGears } from "react-icons/fa6";
+import { FaGears } from "react-icons/fa6";
 import { SlPeople } from "react-icons/sl";
-import { CiBag1 } from "react-icons/ci";
+
 import { IoMdSpeedometer } from "react-icons/io";
 import Badge from "../Badge";
 import Button from "../Button";
