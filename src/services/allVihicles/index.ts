@@ -11,6 +11,11 @@ export interface CarProps{
     imageSrc?:string
     transmission_type?:'manual' | 'auto'
     badge?:'Hire' | 'Sale'}
+
+    export interface CarTypeProps {
+        type: string;
+        image?: any;
+      }
    
 
 
