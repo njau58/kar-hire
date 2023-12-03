@@ -1,25 +1,49 @@
 import "./App.css";
-import BookingForm from "./components/BookingForm";
-import CTA from "./components/CTA";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import HowWorks from "./components/HowWorks";
-import NavBar from "./components/Navbar";
-import Portifolio from "./components/Portifolio";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from "./components/Home";
+import ErrorElement from './components/ErrorElement'
+import Login from "./components/AuthComponents/Login";
+import CarDetails from "./components/CarDetails";
+
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>,
+    errorElement:<ErrorElement/>
+  },
+  {
+    path: "/login",
+    element: <Login/>,
+   
+  },
+  {
+    path: "/register",
+    element: <Login/>,
+   
+  },
+  {
+    path: "/car-details/:Id",
+    element: <CarDetails/>,
+   
+  },
+
+ 
+ 
+]);
 
 function App() {
   return (
-    <main>
-      <NavBar />
-      <Hero />
-      <BookingForm />
-      <HowWorks />
-    <Portifolio/>
-    <CTA/>
-    <Footer/>
+    <>
+      <RouterProvider router={router} />
     
-    </main>
+    
+    </>
   );
 }
 
-export default App;
+export default App

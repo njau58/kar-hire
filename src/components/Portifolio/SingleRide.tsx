@@ -3,8 +3,9 @@ import { SlPeople } from "react-icons/sl";
 
 import { IoMdSpeedometer } from "react-icons/io";
 import Badge from "../Badge";
-import Button from "../Button";
+
 import { CarProps } from "../../services/allVihicles";
+import CustomLink from "../CustomLink";
 
 const SingleRide = ({
   imageSrc,
@@ -13,24 +14,20 @@ const SingleRide = ({
   badge,
   hire_price,
 }: CarProps) => {
-
   return (
     <div className="shadow-lg  relative  rounded-lg border bg-white max-w-lg mx-auto  w-full  ">
       <div className="h-[18rem] ">
         <div className="absolute right-0">
-          
           <Badge variant={badge} />
         </div>
         <div className=" overflow-hidden h-full w-full">
-        <img
-          src={imageSrc}
-          decoding="async"
-          loading="lazy"
-          className="rounded-t-lg h-full w-full object-cover    transition duration-500 ease-in-out  hover:scale-110"
-        />
-
+          <img
+            src={imageSrc}
+            decoding="async"
+            loading="lazy"
+            className="rounded-t-lg h-full w-full object-cover    transition duration-500 ease-in-out  hover:scale-110"
+          />
         </div>
-     
       </div>
 
       <div className="flex flex-col items-start gap-3 mt-4 p-4">
@@ -48,7 +45,7 @@ const SingleRide = ({
             </div>
             <span className="">{transmission_type}</span>
           </div>
-      
+
           <div>
             <div className="p-3 text-xl border rounded-lg">
               <IoMdSpeedometer />
@@ -63,7 +60,7 @@ const SingleRide = ({
         </p>
         <div className="w-full flex justify-center">
           {" "}
-          <Button theme="filled" text="Book Now" />
+          <CustomLink to={`/car-details/helloz`} text="Book Now"></CustomLink>
         </div>
       </div>
     </div>
