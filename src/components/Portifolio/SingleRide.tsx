@@ -24,6 +24,8 @@ const SingleRide = ({
         <div className=" overflow-hidden h-full w-full">
         <img
           src={imageSrc}
+          decoding="async"
+          loading="lazy"
           className="rounded-t-lg h-full w-full object-cover    transition duration-500 ease-in-out  hover:scale-110"
         />
 

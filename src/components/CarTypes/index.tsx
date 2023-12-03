@@ -67,7 +67,7 @@ const CarTypes: React.FC<HandleClickProps> = ({ handleCarTypeClick }) => {
               height="150"
               decoding="async"
               data-nimg="1"
-              className="w-"
+            
               src={carType.image}
             ></img>
             <span className="relative font-semibold capitalize -top-8 ">

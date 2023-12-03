@@ -25,13 +25,11 @@ const MobileMenu: React.FC<Props> = ({ setActiveMenu }) => {
             </ul>
           );
         })}
-           <div className=" flex flex-col gap-4 mt-12 w-full">
-      <Button theme="text" text="LogIn"></Button>
-              <Button theme="filled" text="SignUp"></Button>
+        <div className=" flex flex-col gap-4 mt-12 w-full">
+          <Button theme="text" text="LogIn"></Button>
+          <Button theme="filled" text="SignUp"></Button>
+        </div>
       </div>
-      </div>
-
-   
     </div>
   );
 };

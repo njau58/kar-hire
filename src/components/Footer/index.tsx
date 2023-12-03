@@ -10,7 +10,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa6";
 import { ImLocation } from "react-icons/im";
 import { MdLocalPhone } from "react-icons/md";
-import Button from "../Button";
+import SubscribeForm from "../SubscribeForm";
 
 const Footer = () => {
   const [nav_items, setNavItems] = useState<Item[]>([]);
@@ -18,7 +18,6 @@ const Footer = () => {
   useEffect(() => {
     setNavItems(generateNavItems());
   }, []);
-
 
   return (
     <section
@@ -80,18 +79,12 @@ const Footer = () => {
             </div>
           </div>
           <div className="">
-            <h3 className="text-start font-semibold text-xl"> Get The Latest From Us</h3>
-            <div className="relative h-16 w-96 ">
-            <input className=" px-2 w-full h-full rounded-md border" placeholder="Your email address..."></input>
-            <div className="absolute top-3 right-2"> <Button  theme="filled" text="Subscribe Now"></Button></div>
-            </div>
-       
-
-
-        </div>
-
-
-
+            <h3 className="text-start font-semibold text-xl">
+              {" "}
+              Get The Latest From Us
+            </h3>
+            <SubscribeForm />
+          </div>
         </div>
       </div>
 
