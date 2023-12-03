@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link, useRouteError } from "react-router-dom";
 
-const ErrorElement = () => {
-  const error = useRouteError();
+
+
+type routerError=any
+const ErrorElement= () => {
+  const error:routerError = useRouteError();
 
   return (
     <div className="w-screen h-screen flex items-center justify-center flex-col gap-4">
