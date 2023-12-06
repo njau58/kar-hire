@@ -41,7 +41,7 @@ const BookingForm = ({hire_price}:any) => {
               <option value="Nakuru">Nakuru</option>
             </select>
           </div>
-          <div className="flex flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5">
+          <div   onClick={toggleReturnDate} className="flex flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5">
             <span className="text-primary">
               <SlCalender />
             </span>
@@ -60,7 +60,7 @@ const BookingForm = ({hire_price}:any) => {
               {isPickUpDateOpen && <Calendar />}
             </div>
           </div>
-          <div className="flex flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5">
+          <div   onClick={toggleReturnDate} className="flex flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5">
             <span className="text-primary">
               <SlCalender />
             </span>
