@@ -22,7 +22,7 @@ const Footer = () => {
   return (
     <section
       id="footer"
-      className="w-full  bg-slate-50 relative bottom-0 px-4 mt-16"
+      className="w-full  bg-zinc-50 relative bottom-0 px-4 mt-16"
     >
       <div className="w-full h-full max-w-6xl flex flex-col gap-6 md:flex-row items-start   md:justify-between mx-auto pt-12 ">
         <div className=" flex flex-col gap-6">
