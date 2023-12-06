@@ -1,5 +1,6 @@
 
 import Button from "../Button";
+import CustomLink from "../CustomLink";
 
 const Hero: React.FC = () => {
   return (
@@ -20,7 +21,7 @@ const Hero: React.FC = () => {
             layout.
           </p>
           <div className="flex flex-row gap-4 w-full max-w-sm">
-            <Button theme="filled" text="Hire Your Ride" />
+            <CustomLink variant="filled" text="Hire Your Ride" to='all-vihicles' />
             <Button theme="outlined" text="Become A Partner" />
           </div>
         </div>

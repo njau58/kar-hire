@@ -3,7 +3,6 @@
 export interface Item {
   name: string;
   href: string;
-  offset: number | {};
   styles: string;
 
 };
@@ -15,41 +14,24 @@ const generateNavItems = (): Item[] => {
   const items: Item[] = [
     {
       name: "Home",
-      href: "#",
-      offset: {},
+      href: "/",
+     
       styles: itemStyles,
     },
 
     {
       name: "About Us",
-      offset: {},
-      href: "#",
+      
+      href: "about-us",
       styles: itemStyles,
     },
     {
-      name: "Services",
-      offset: {},
-      href: "#",
+      name: "Available Vihicles",
+      
+      href: "all-vihicles",
       styles: itemStyles,
     },
-    {
-      name: "Models",
-      offset: {},
-      href: "#",
-      styles: itemStyles,
-    },
-    {
-      name: "Blog",
-      offset: {},
-      href: "#",
-      styles: itemStyles,
-    },
-    {
-      name: "Contact Us",
-      offset: {},
-      href: "#",
-      styles: itemStyles,
-    },
+ 
 
   ];
 

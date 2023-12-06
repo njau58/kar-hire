@@ -8,6 +8,7 @@ import { SCREENS } from "../../utils/responsive";
 import MobileMenu from "./MobileMenu";
 // import { CiSearch } from "react-icons/ci";
 import Button from "../Button";
+import { Link } from "react-router-dom";
 const NavBar = () => {
   const [nav_items, setNavItems] = useState<Item[]>([]);
   const [activeMenu, setActiveMenu] = useState<Boolean>(false);
@@ -43,7 +44,7 @@ const NavBar = () => {
           scrollThreshold ? "shadow-sm bg-white  " : ""
         } w-full fixed   px-4  top-0  z-40 transition duration-700 ease-in-out shadow-md `}
       >
-        <div className="flex     flex-row   py-8  mx-auto justify-between items-center  max-w-6xl  ">
+        <div className="flex flex-row   py-8  mx-auto justify-between items-center  max-w-6xl  ">
           <Logo />
           {isMobile ? (
             <>
@@ -53,16 +54,16 @@ const NavBar = () => {
             <ul className="flex flex-row gap-9  items-center justify-center">
               {nav_items.map((item: Item) => {
                 return (
-                  <li className={item.styles} key={item.name}>
+                  <Link className={item.styles} key={item.name} to={item.href}>
                     {item.name}
-                  </li>
+                  </Link>
                 );
               })}
             </ul>
           )}
           <div className=" hidden  md:flex gap-4 flex-col md:flex-row">
-            <Button theme="text" text="LogIn"></Button>
-            <Button theme="filled" text="SignUp"></Button>
+            <Button theme="filled" text="SigIn"></Button>
+        
           </div>
         </div>
       </nav>

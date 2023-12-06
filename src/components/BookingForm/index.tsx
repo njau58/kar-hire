@@ -22,7 +22,7 @@ const BookingForm = ({hire_price}:any) => {
   return (
     <div className="w-auto relative h-auto ">
       <div className="mt-12  max-w-4xl mx-auto w-full h-[30rem]  ">
-        <div className="  flex flex-col   items-center gap-9 py-8  justify-center h-full  w-full shadow-lg border rounded-md bg-white">
+        <div className="  flex flex-col   items-center gap-9 py-8  justify-center h-full  w-full  border rounded-md bg-white">
           <div className="absolute top-4 left-4 flex flex-row items-center justify-center gap-2">
             <p className="text-xs">From</p>
             <p className="text-gray-900 font-semibold texxt-xl">KES {hire_price} /day</p>
@@ -41,13 +41,13 @@ const BookingForm = ({hire_price}:any) => {
               <option value="Nakuru">Nakuru</option>
             </select>
           </div>
-          <div   onClick={togglePickUpDate} className="flex flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5">
+          <div   onClick={togglePickUpDate} className="flex  cursor-pointer flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5">
             <span className="text-primary">
               <SlCalender />
             </span>
             <p className="text-gray-900"> Pick Up Date</p>
             <span
-              onClick={togglePickUpDate}
+           
               className={`${
                 isPickUpDateOpen
                   ? " rotate-180 transiton duration-500 ease-out"
@@ -60,13 +60,13 @@ const BookingForm = ({hire_price}:any) => {
               {isPickUpDateOpen && <Calendar />}
             </div>
           </div>
-          <div   onClick={toggleReturnDate} className="flex flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5">
+          <div   onClick={toggleReturnDate} className="flex cursor-pointer flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5">
             <span className="text-primary">
               <SlCalender />
             </span>
             <p className="text-gray-900">Return Date</p>
             <span
-              onClick={toggleReturnDate}
+           
               className={`${
                 isReturnDateOpen
                   ? " rotate-180 transiton duration-500 ease-out"
