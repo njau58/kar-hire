@@ -29,7 +29,7 @@ const CarDetails = () => {
   return (
     <>
       <NavBar />
-      <div className="w-full   flex flex-col  gap-6 mt-24 py-6 mx-4 max-w-6xl md:mx-auto">
+      <div className="w-full   flex flex-col  gap-6 mt-24 py-1 md:py-3 mx-4 max-w-6xl md:mx-auto">
         <div className="flex flex-row items-center gap-2 justify-between my-4  w-full ">
           <CustomLink to="/" text="Home" variant="unfilled" />
           <span>
