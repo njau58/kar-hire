@@ -40,8 +40,8 @@ const NavBar = () => {
       {activeMenu && isMobile && <MobileMenu setActiveMenu={setActiveMenu} />}
       <nav
         className={` ${
-          scrollThreshold ? "shadow-sm bg-white/30 backdrop-blur-lg  " : ""
-        } w-full fixed   px-4  top-0  z-40 transition duration-700 ease-in-out  `}
+          scrollThreshold ? "shadow-sm bg-white  " : ""
+        } w-full fixed   px-4  top-0  z-40 transition duration-700 ease-in-out shadow-md `}
       >
         <div className="flex     flex-row   py-8  mx-auto justify-between items-center  max-w-6xl  ">
           <Logo />
@@ -58,20 +58,13 @@ const NavBar = () => {
                   </li>
                 );
               })}
-              {/* <div className="text-md p-1.5 text-center text-white  bg-red-500 rounded-full hover:scale-110 transition duration-300  ease-in-out">
-                <CiSearch />
-              </div> */}
-           
-
             </ul>
           )}
           <div className=" hidden  md:flex gap-4 flex-col md:flex-row">
-          <Button theme="text" text="LogIn"></Button>
-              <Button theme="filled" text="SignUp"></Button>
+            <Button theme="text" text="LogIn"></Button>
+            <Button theme="filled" text="SignUp"></Button>
           </div>
-          
         </div>
-        
       </nav>
     </>
   );

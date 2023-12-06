@@ -1,4 +1,4 @@
-import BookingForm from "../BookingForm";
+
 import CTA from "../CTA";
 import Hero from "../Hero";
 import HowWorks from "../HowWorks";
@@ -10,7 +10,6 @@ const Home = () => {
     <Main>
       <>
         <Hero />
-        <BookingForm />
         <HowWorks />
         <Portifolio />
         <CTA />

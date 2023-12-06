@@ -1,13 +1,13 @@
-
 import "./App.css";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import Home from "./components/Home";
-import ErrorElement from './components/ErrorElement'
+import ErrorElement from "./components/ErrorElement";
+
 import Login from "./components/AuthComponents/Login";
-import CarDetails from "./components/CarDetails";
+import CarDetailsPage from "./pages/CarDetailsPage";
 
 
 
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/car-details/:Id",
-    element: <CarDetails/>,
+    element: <CarDetailsPage/>,
    
   },
 

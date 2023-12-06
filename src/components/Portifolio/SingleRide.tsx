@@ -1,10 +1,10 @@
 import { FaGears } from "react-icons/fa6";
 import { SlPeople } from "react-icons/sl";
-
+import{ CarProps } from "../../services/allVihicles";
 import { IoMdSpeedometer } from "react-icons/io";
 import Badge from "../Badge";
 
-import { CarProps } from "../../services/allVihicles";
+
 import CustomLink from "../CustomLink";
 
 const SingleRide = ({
@@ -13,7 +13,10 @@ const SingleRide = ({
   transmission_type,
   badge,
   hire_price,
+  Id,
 }: CarProps) => {
+
+
   return (
     <div className="shadow-lg  relative  rounded-lg border bg-white max-w-lg mx-auto  w-full  ">
       <div className="h-[18rem] ">
@@ -22,7 +25,7 @@ const SingleRide = ({
         </div>
         <div className=" overflow-hidden h-full w-full">
           <img
-            src={imageSrc}
+            src={imageSrc[0]}
             decoding="async"
             loading="lazy"
             className="rounded-t-lg h-full w-full object-cover    transition duration-500 ease-in-out  hover:scale-110"
@@ -60,7 +63,7 @@ const SingleRide = ({
         </p>
         <div className="w-full flex justify-center">
           {" "}
-          <CustomLink to={`/car-details/helloz`} text="Book Now"></CustomLink>
+          <CustomLink to={`/car-details/${Id}`} text="Book Now" variant="filled"></CustomLink>
         </div>
       </div>
     </div>

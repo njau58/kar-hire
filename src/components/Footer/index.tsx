@@ -22,9 +22,9 @@ const Footer = () => {
   return (
     <section
       id="footer"
-      className="w-full  bg-white relative bottom-0 mx-4 my-16"
+      className="w-full  bg-slate-50 relative bottom-0 mx-4 mt-16"
     >
-      <div className="w-full h-full max-w-6xl flex flex-col gap-6 md:flex-row items-start   md:justify-between mx-auto ">
+      <div className="w-full h-full max-w-6xl flex flex-col gap-6 md:flex-row items-start   md:justify-between mx-auto pt-12 ">
         <div className=" flex flex-col gap-6">
           <h4 className="text-2xl md:4xl font-semibold">Quick Links</h4>
 
@@ -90,10 +90,10 @@ const Footer = () => {
 
       <hr className="my-12 bg-black w-full "></hr>
 
-      <div className="">
+      <div className="pb-32">
         <p>
           Designed with{" "}
-          <span className="inline-block text-primary">
+          <span className="inline-block text-primary ">
             <FaHeart></FaHeart>
           </span>{" "}
           by Sofleafapplications{" "}

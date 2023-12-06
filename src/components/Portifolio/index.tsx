@@ -1,3 +1,4 @@
+import React from "react";
 import SingleRide from "./SingleRide";
 import vihicles, { CarProps } from "../../services/allVihicles";
 import { useState } from "react";
@@ -40,10 +41,11 @@ list of available car types */}
           ) : (
             <>
               {" "}
-              {filteredVihicles?.map((vihicle, index) => {
+              {filteredVihicles?.map((vihicle) => {
                 return (
                   <SingleRide
-                    key={index}
+                  Id={vihicle.Id}
+                    key={vihicle.Id}
                     imageSrc={vihicle.imageSrc}
                     type={vihicle.type}
                     vihicle_name={vihicle.vihicle_name}
