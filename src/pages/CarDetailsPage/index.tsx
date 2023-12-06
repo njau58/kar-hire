@@ -53,7 +53,7 @@ const CarDetails = () => {
               {" "}
               <CarCarousel images={vihicleDetails[0]?.imageSrc} />
             </div>
-            <div className="md:w-[50%] w-full h-full mr-4 md:mr-0">
+            <div className="md:w-[50%] w-full h-full ">
               {" "}
               <BookingForm hire_price={vihicleDetails[0]?.hire_price} />
             </div>

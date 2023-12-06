@@ -15,7 +15,7 @@ export default function CarCarousel({ images }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="max-w-md md:max-w-xl overflow-hidden mx-auto pt-8 w-full pr-4 ">
+    <div className="max-w-sm md:max-w-xl overflow-hidden mx-auto pt-8 w-full pr-4 ">
       <Swiper
         spaceBetween={10}
         thumbs={{
