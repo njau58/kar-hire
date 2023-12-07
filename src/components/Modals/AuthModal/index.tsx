@@ -6,7 +6,7 @@ import { AuthModalContext } from "../../../Context/AuthModalToggleContext";
 
 const AuthModal = () => {
 
-    const {isOpen, toggleAuthModal} = useContext(AuthModalContext)
+    const {isOpen} = useContext(AuthModalContext)
 
   return (
     <div
