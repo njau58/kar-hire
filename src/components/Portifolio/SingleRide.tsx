@@ -36,24 +36,28 @@ const SingleRide = ({
       <div className="flex flex-col items-start gap-3 mt-4 p-4">
         <h4 className="font-semibold text-xl">{vihicle_name}</h4>
         <div className="flex flex-row items-start justify-start px-2 w-full gap-4">
-          <div>
+          <div className="group relative" >
             <div className="p-3 text-xl border rounded-lg">
               <SlPeople />
             </div>
             <span className="">4</span>
+            <div className="text-white text-xs rounded-md px-1.5 py-2 absolute -top-8 bg-black hidden group-hover:flex transition duration-500 ease-in-out">Capacity</div>
           </div>
-          <div>
+          <div className="group relative">
             <div className="p-3 text-xl border rounded-lg">
               <FaGears />
-            </div>
+            </div >
             <span className="">{transmission_type}</span>
+            <div className="text-white text-xs rounded-md px-1.5 py-2 absolute -top-8 -left-3.5 bg-black hidden group-hover:flex transition duration-500 ease-in-out">Transmission</div>
           </div>
 
-          <div>
+          <div className="group relative">
             <div className="p-3 text-xl border rounded-lg">
               <IoMdSpeedometer />
             </div>
             <span className="">15km/ltr</span>
+            <div className="text-white text-xs rounded-md px-1.5 py-2 absolute -top-8 -left-3.5 bg-black hidden group-hover:flex transition duration-500 ease-in-out z-10 mb-3">Consumption</div>
+            
           </div>
         </div>
         <hr className="w-full"></hr>

@@ -6,15 +6,16 @@ import MenuIcon from "../MenuIcon";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../utils/responsive";
 import MobileMenu from "./MobileMenu";
-// import { CiSearch } from "react-icons/ci";
 import Button from "../Button";
 import { Link } from "react-router-dom";
+import { AuthModalContext } from "../../Context/AuthModalToggleContext";
+import { useContext } from "react";
 const NavBar = () => {
   const [nav_items, setNavItems] = useState<Item[]>([]);
   const [activeMenu, setActiveMenu] = useState<Boolean>(false);
   const [scrollThreshold, setScrollThreshold] = useState<Boolean>(false);
 
-  console.log(scrollThreshold);
+  const { toggleAuthModal} = useContext(AuthModalContext);
 
   //checks for when scrolled 100px on y-axis
 
@@ -62,8 +63,11 @@ const NavBar = () => {
             </ul>
           )}
           <div className=" hidden  md:flex gap-4 flex-col md:flex-row">
-            <Button theme="filled" text="SigIn"></Button>
-        
+            <Button
+              theme="filled"
+              text="SigIn"
+              onClick={toggleAuthModal}
+            ></Button>
           </div>
         </div>
       </nav>

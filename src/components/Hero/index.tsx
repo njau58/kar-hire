@@ -16,9 +16,8 @@ const Hero: React.FC = () => {
             Hire Your Ride  Across Kenya With Us
           </h1>
           <p className="text-gray-700 lg:max-w-xl max-w-sm text-start text-sm lg:text-base">
-            Why do we use it? It is a long established fact that a reader will
-            be distracted by the readable content of a page when looking at its
-            layout.
+            Drive your dreams with our hassle-free car rental service-Where every journey begins with convinience and ends with satisfaction.
+      
           </p>
           <div className="flex flex-row gap-4 w-full max-w-sm">
             <CustomLink variant="filled" text="Hire Your Ride" to='all-vihicles' />
