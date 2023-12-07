@@ -11,6 +11,7 @@ import { FaHeart } from "react-icons/fa6";
 import { ImLocation } from "react-icons/im";
 import { MdLocalPhone } from "react-icons/md";
 import SubscribeForm from "../SubscribeForm";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [nav_items, setNavItems] = useState<Item[]>([]);
@@ -28,15 +29,15 @@ const Footer = () => {
         <div className=" flex flex-col gap-6">
           <h4 className="text-2xl md:4xl font-semibold">Quick Links</h4>
 
-          <ul className="space-y-4 text-left">
+          <div className=" flex flex-col space-y-4 text-left">
             {nav_items?.map((item) => {
               return (
-                <li className=" cursor-pointer hover:underline tansition duration-700 ease-in-out">
+                <Link to={item.href} className=" cursor-pointer hover:underline tansition duration-700 ease-in-out">
                   <a>{item.name}</a>
-                </li>
+                </Link>
               );
             })}
-          </ul>
+          </div>
         </div>
         <div className=" flex flex-col gap-6">
           <h4 className="text-2xl md:4xl font-semibold text-start">Contacts</h4>
