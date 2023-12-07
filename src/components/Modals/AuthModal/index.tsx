@@ -1,12 +1,28 @@
-
 import { Transition } from "@headlessui/react";
-import {useContext} from 'react';
+import { useContext } from "react";
 import { AuthModalContext } from "../../../Context/AuthModalToggleContext";
+import SignUp from "../../AuthComponents/SignUp";
+import SignIn from "../../AuthComponents/SignIn";
+import ModalButton from "./ModalButton";
+import { useState } from "react";
 
 
 const AuthModal = () => {
+  const { isOpen, toggleAuthModal } = useContext(AuthModalContext);
+  const [isSignIn, setIsSignIn] = useState<Boolean>(false);
+  const [isSignUp, setIsSignUp] = useState<Boolean>(true);
 
-    const {isOpen} = useContext(AuthModalContext)
+  const toggleSignIn = () => {
+    setIsSignIn(true);
+    setIsSignUp(false);
+  };
+
+  const toggleSignUp = () => {
+    setIsSignIn(false);
+    setIsSignUp(true);
+  };
+
+  console.log(SignIn)
 
   return (
     <div
@@ -25,8 +41,17 @@ const AuthModal = () => {
         leaveFrom="opacity-1"
         leaveTo="opacity-0"
       >
-        <div className=" absolute max-h-[60vh] flex flex-col bg-white max-w-3xl my-auto md:mx-auto inset-0 mx-2 px-2 md:px-6  rounded-md ">
-        
+        <div className=" absolute max-h-[80vh] flex flex-col bg-white max-w-xl my-auto md:mx-auto inset-0 mx-2 px-2 md:px-6   rounded-md ">
+          <div className="py-12  w-full  flex flex-row gap-8 items-center justify-center">
+            <button className={isSignUp?"font-semibold border-b-4 border-primary transition duration-700 ease-in-out":"font-semibold  "}  onClick={toggleSignUp}>SignUp</button>
+            <span className="border-r-2 border-gray-200 h-full "></span>
+            <button  className={isSignIn?"font-semibold border-b-4 border-b-primary  transition duration-700 ease-in-out":"font-semibold  "} onClick={toggleSignIn}> SignIn</button>
+          </div>
+
+          <ModalButton toggleAuthModal={toggleAuthModal} />
+
+          {isSignUp && <SignUp/>}
+          {isSignIn && <SignIn/>}
         </div>
       </Transition>
     </div>
