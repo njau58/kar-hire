@@ -1,4 +1,5 @@
 import CTA from "../CTA";
+import ChatWidget from "../ChatWidget";
 import Hero from "../Hero";
 import HowWorks from "../HowWorks";
 import Main from "../Layouts/Main";
@@ -15,6 +16,7 @@ const Home = () => {
         <HowWorks />
         <Portifolio />
         <CTA />
+        <ChatWidget/>
       </>
     </Main>
   );
