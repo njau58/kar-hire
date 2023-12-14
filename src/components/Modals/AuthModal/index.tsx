@@ -21,7 +21,6 @@ const AuthModal = () => {
     setIsSignUp(true);
   };
 
-  console.log(SignIn);
 
   return (
     <div

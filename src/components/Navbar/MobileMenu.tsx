@@ -3,11 +3,14 @@ import { useState, useEffect } from "react";
 import { Item } from "./NavItems";
 import MenuIcon from "../MenuIcon";
 import Button from "../Button";
+import { AuthModalContext } from "../../Context/AuthModalToggleContext";
+import { useContext } from "react";
 
 interface Props {
   setActiveMenu: React.Dispatch<React.SetStateAction<Boolean>>;
 }
 const MobileMenu: React.FC<Props> = ({ setActiveMenu }) => {
+  const { toggleAuthModal } = useContext(AuthModalContext);
   const [nav_items, setNavItems] = useState<Item[]>([]);
 
   useEffect(() => {
@@ -26,8 +29,11 @@ const MobileMenu: React.FC<Props> = ({ setActiveMenu }) => {
           );
         })}
         <div className=" flex flex-col gap-4 mt-12 w-full">
-          <Button theme="text" text="LogIn"></Button>
-          <Button theme="filled" text="SignUp"></Button>
+          <Button
+            theme="filled"
+            text="SignIn"
+            onClick={toggleAuthModal}
+          ></Button>
         </div>
       </div>
     </div>
