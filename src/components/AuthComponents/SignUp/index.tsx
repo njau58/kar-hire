@@ -1,8 +1,6 @@
 import Button from "../../Button";
 
-
 const SignUp = () => {
-
   return (
     <div className="mx-4 ">
       <div></div>
@@ -18,7 +16,7 @@ const SignUp = () => {
             type="email"
             name="email"
             id="email"
-            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border accent-red-500 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
             placeholder="name@company.com"
             required
           />
@@ -35,7 +33,7 @@ const SignUp = () => {
             name="password"
             id="password"
             placeholder="••••••••"
-            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
             required
           />
         </div>
@@ -51,9 +49,22 @@ const SignUp = () => {
             name="confirm-password"
             id="confirm-password"
             placeholder="••••••••"
-            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
             required
           />
+        </div>
+        <div>
+          <label
+            htmlFor="accountType"
+            className="block mb-2 text-start text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Select Account Type
+          </label>
+          <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500">
+            <option selected>Choose account</option>
+            <option value="normal">Normal User</option>
+            <option value="partner">Partner</option>
+          </select>
         </div>
         <div className="flex items-start">
           <div className="flex items-center h-5">
@@ -80,18 +91,9 @@ const SignUp = () => {
             </label>
           </div>
         </div>
+
         <Button text="SignUp" theme="filled"></Button>
-     
       </form>
-      {/* <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-          Already have an account?{" "}
-          <button
-            onClick={()=>toggleSignIn}
-            className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-          >
-            Login here
-          </button>
-        </p> */}
     </div>
   );
 };
