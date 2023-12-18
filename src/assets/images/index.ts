@@ -12,8 +12,9 @@ import pickup from './pickup.svg'
 import hatchback from './hatchback.svg'
 import van from './van.svg'
 import sedan from './sedan.svg'
+import range from './range.webp'
 
 
 
 
-export { car_logo, blob , blob2, mclaren, mclaren_small, porche, jeep, suv, hatchback, pickup, station_wagon, coupe, van, sedan};
+export {range, car_logo, blob , blob2, mclaren, mclaren_small, porche, jeep, suv, hatchback, pickup, station_wagon, coupe, van, sedan};

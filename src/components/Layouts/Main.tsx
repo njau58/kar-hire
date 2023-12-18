@@ -1,6 +1,7 @@
 import Footer from "../Footer";
 import NavBar from "../Navbar";
 import { ReactNode } from "react";
+import ChatWidget from "../ChatWidget";
 
 interface ComponentProps {
   children: ReactNode;
@@ -12,6 +13,7 @@ const Main: React.FC<ComponentProps> = ({ children }) => {
       <NavBar />
 
       {children}
+      <ChatWidget/>
       <Footer />
     </>
   );

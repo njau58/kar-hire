@@ -34,7 +34,7 @@ const ChatWidget = () => {
             <MdOutlineClose />
           </span>
 
-          <div className="h-[75%] bg-primary rounded-t-md p-2">
+          <div className="h-[75%] bg-black rounded-t-md p-2">
             <div className="w-full h-full flex flex-col justify-center items-center gap-4">
               <span className="text-white text-5xl">
                 <FaWhatsapp />
@@ -55,9 +55,12 @@ const ChatWidget = () => {
               value={msg}
               onChange={handleOnchange}
               placeholder="Ask anything!"
-              className=" relative w-full h-full outline-none rounded-b-md pl-2"
+              className=" relative w-full h-full outline-none rounded-b-md pl-2 block"
             ></input>
-            <button type="submit"  className="absolute text-gray-500 right-4 bottom-4 cursor-pointer">
+            <button
+              type="submit"
+              className="absolute text-gray-500 right-0 bottom-4 p-2 bg-white cursor-pointer"
+            >
               {" "}
               <FiSend />
             </button>
@@ -67,7 +70,7 @@ const ChatWidget = () => {
 
       <div
         onClick={toggleWidget}
-        className=" cursor-pointer rounded-full right-4 absolute -bottom-8 w-12 p-3 bg-primary"
+        className=" cursor-pointer rounded-full right-4 absolute -bottom-8 w-12 p-3 bg-black"
       >
         <div className="text-white  text-2xl">
           {" "}

@@ -12,14 +12,15 @@ export default {
 
       colors: {
    
-        primary: "#ef4444",
+        primary: "#111827",
         primary_heading_color:''
       },
       backgroundImage: {
       
       
         blob: "url('../../src/assets/images/blob.svg')",
-        blob2: "url('/public/images/blob2.png')",
+        range: "url('/public/images/range.webp')",
+        
       
 
 
@@ -36,7 +37,7 @@ export default {
     },
   },
   plugins: [
-    // ...
+    // "#ef4444",
     require('tailwind-scrollbar')({ nocompatible: true }),
     
 ],

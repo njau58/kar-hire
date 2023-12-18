@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import {car_logo} from "../../assets/images";
+import { FaCar } from "react-icons/fa6";
 const Logo = () => {
   return (
     <Link to="/" className="flex flex-row items-center justify-center gap-2">
-      <img src={car_logo} alt="logo" className=" object-contain   " />
-      <p className="font-bold text-xl color-black">Kar Hire.</p>
+     <span className="text-2xl p-2 rounded-full bg-black/10 "><FaCar/></span>
+      <p className="font-bold text-xl color-black">Kar Hire</p>
     </Link>
   );
 };

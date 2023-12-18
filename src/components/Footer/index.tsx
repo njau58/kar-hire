@@ -43,19 +43,19 @@ const Footer = () => {
           <h4 className="text-2xl md:4xl font-semibold text-start">Contacts</h4>
           <div className="flex flex-col space-y-4 items-start  ">
             <div className="flex flex-row space-x-4 items-center">
-              <div className="text-xl text-primary">
+              <div className="text-xl text-black">
                 <MdLocalPhone />
               </div>
               <div className="text-sm">+254706338454 </div>
             </div>
             <div className="flex flex-row space-x-4 items-center">
-              <div className="text-xl text-primary">
+              <div className="text-xl text-black">
                 <ImLocation />
               </div>
               <div className="text-sm"> Nairobi · Kenya.</div>
             </div>
             <div className="flex flex-row space-x-4 items-center">
-              <div className="text-xl text-primary">
+              <div className="text-xl text-black">
                 <MdEmail />
               </div>
               <div className="text-sm">info@softleafapplications.co.ke</div>
@@ -66,16 +66,16 @@ const Footer = () => {
           <h4 className="text-2xl md:4xl font-semibold text-start">Social</h4>
 
           <div className=" flex flex-row gap-4 text-left">
-            <div className="text-2xl bg-gray-50 p-2.5 border border-primary rounded-full  hover:scale-105 text-primary transform transition ease-in-out duration-400">
+            <div className="text-2xl bg-gray-50 p-2.5 border border-black rounded-full  hover:scale-105 text-black transform transition ease-in-out duration-400">
               <AiFillInstagram />
             </div>
-            <div className="text-2xl bg-gray-50 p-2.5 border border-primary rounded-full  hover:scale-105 text-primary transform transition ease-in-out duration-400">
+            <div className="text-2xl bg-gray-50 p-2.5 border border-black rounded-full  hover:scale-105 text-black transform transition ease-in-out duration-400">
               <FaTelegram />
             </div>
-            <div className="text-2xl bg-gray-50 p-2.5 border border-primary rounded-full  hover:scale-105 text-primary transform transition ease-in-out duration-400">
+            <div className="text-2xl bg-gray-50 p-2.5 border border-black rounded-full  hover:scale-105 text-black transform transition ease-in-out duration-400">
               <FaYoutube />
             </div>
-            <div className="text-2xl bg-gray-50 p-2.5 border border-primary rounded-full  hover:scale-105 text-primary transform transition ease-in-out duration-400">
+            <div className="text-2xl bg-gray-50 p-2.5 border border-black rounded-full  hover:scale-105 text-black transform transition ease-in-out duration-400">
               <FaFacebook />
             </div>
           </div>

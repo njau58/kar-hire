@@ -1,4 +1,5 @@
-import { Link, useRouteError } from "react-router-dom";
+import {  useRouteError } from "react-router-dom";
+import CustomLink from "../CustomLink";
 
 type routerError = any;
 const ErrorElement = () => {
@@ -10,12 +11,8 @@ const ErrorElement = () => {
       <p>
         <i className="text-lg font-bold">{error.statusText || error.message}</i>
       </p>
-      <Link
-        className="px-6 py-2.5 bg-primary text-white rounded-md hover:bg-red-600 transition duration-300 ease-in-out"
-        to="/"
-      >
-        <a> Back Home</a>
-      </Link>
+
+     <div className="max-w-sm"> <CustomLink to="/" variant='filled' text="Back Home"></CustomLink></div> 
     </div>
   );
 };

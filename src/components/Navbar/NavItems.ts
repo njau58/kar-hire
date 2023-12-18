@@ -9,7 +9,7 @@ export interface Item {
 
 
 const generateNavItems = (): Item[] => {
-  const itemStyles = "text-gray-700  transition duration-300 ease-in-out cursor-pointer hover:text-red-500 text-lg font-bold md:text-sm ";
+  const itemStyles = "text-gray-700  transition duration-300 ease-in-out cursor-pointer hover:bg-primary/10 px-3 py-2 text-lg font-bold md:text-sm ";
 
   const items: Item[] = [
     {

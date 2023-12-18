@@ -11,9 +11,9 @@ const CustomLink: React.FC<LinkProps> = ({ to, text, variant }) => {
     case "filled":
       return (
         <Link
-          className=" bg-red-500 px-6 py-2 rounded-md border-2 border-solid
-  text-white border-transparent transition-all duration-300 w-full
-    ease-in-out hover:bg-transparent hover:border-red-500 hover:text-red-500"
+          className=" bg-primary px-6 py-2 rounded-md border-2 border-solid
+  text-white  transition-all duration-300 w-full
+    ease-in-out hover:bg-black"
           to={to}
         >
           <a>{text}</a>
@@ -24,7 +24,7 @@ const CustomLink: React.FC<LinkProps> = ({ to, text, variant }) => {
     return  <Link
       className="  
  transition-all duration-300 
-ease-in-out font-semibold hover:text-red-500"
+ease-in-out font-semibold hover:text-primary"
       to={to}
     >
       <a>{text}</a>

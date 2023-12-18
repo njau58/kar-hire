@@ -17,7 +17,7 @@ const MobileMenu: React.FC<Props> = ({ setActiveMenu }) => {
     setNavItems(generateNavItems());
   }, []);
   return (
-    <div className=" fixed top-0 flex items-center justify-center z-50 min-h-screen w-full   bg-red-600/5 backdrop-blur-xl ">
+    <div className=" fixed top-0 flex items-center justify-center z-50 min-h-screen w-full   bg-primary/5 backdrop-blur-xl ">
       <MenuIcon variant="close" setActiveMenu={setActiveMenu} />
 
       <div className="flex flex-col gap-9  ">

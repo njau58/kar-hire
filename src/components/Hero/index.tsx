@@ -1,17 +1,26 @@
 
+import { range } from "../../assets/images";
 import Button from "../Button";
 import CustomLink from "../CustomLink";
 
+
+
+
+
+// interface HeroImage{
+//   range:string
+// }
+
 const Hero: React.FC = () => {
   return (
-    <section className=" relative mt-44  w-full  ">
-      <div className="max-w-6xl lg:mx-auto  flex flex-row justify-between mx-4 ">
-        <div className="flex relative z-30 flex-col items-start lg:gap-8 gap-4 ">
+    <section className=" relative md:mt-44 mt-32  w-full  ">
+      <div className="max-w-6xl md:mx-auto  flex md:flex-row justify-between mx-4 flex-col ">
+        <div className="flex relative z-30 flex-col items-start md:gap-8 gap-4 ">
           <div className="flex flex-row items-center justify-center gap-1">
-            <hr className="w-6 bg-red-500 h-0.5"></hr>
-            <p className="text-red-500">Welcome to Kar Hire</p>
+            <hr className="w-6 bg-gray-900 h-0.5"></hr>
+            <p className="text-gray-900">Welcome to Kar Hire</p>
           </div>
-          <h1 className="text-gray-950 max-w-sm lg:max-w-xl font-bold text-3xl lg:text-5xl leading-normal text-start">
+          <h1 className="text-gray-950 max-w-sm md:max-w-xl font-bold text-3xl md:text-5xl leading-normal text-start">
             {" "}
             Hire Your Ride  Across Kenya With Us
           </h1>
@@ -25,7 +34,9 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-       <div className=" absolute lg:-right-[18rem] lg:-top-[15rem]  lg:w-[65%] bg-blob2 bg-no-repeat  bg-contain lg:h-[40rem] -top-[12rem] w-full h-full -right-[12rem] "></div>
+       <div className=" ">
+        <img alt="range" src={range} className="w-full h-full object-cover"  />
+       </div>
       </div>
      
     </section>
