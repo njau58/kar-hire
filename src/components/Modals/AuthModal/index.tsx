@@ -39,7 +39,7 @@ const AuthModal = () => {
         leaveFrom="opacity-1"
         leaveTo="opacity-0"
       >
-        <div className=" absolute md:max-h-[85vh] max-h-[70vh] overflow-y-scroll flex flex-col bg-white max-w-xl my-auto md:mx-auto inset-0 mx-2 px-2 md:px-6   rounded-md ">
+        <div className=" absolute md:max-h-[85vh] max-h-[75vh] overflow-y-scroll flex flex-col bg-white max-w-xl my-auto md:mx-auto inset-0 mx-2 px-2 md:px-6   rounded-md ">
           <div className="py-8  w-full  flex flex-row gap-8 items-center justify-center">
             <button
               className={
