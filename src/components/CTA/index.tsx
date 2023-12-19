@@ -17,7 +17,7 @@ const CTA = () => {
           </div>
         </div>
         <img
-          className="hidden absolute md:block -right-32 -top-32"
+          className="hidden absolute h-[42rem] md:block -right-[22rem] -top-[22rem]"
           src={jeep}
           alt="jeep"
         ></img>
