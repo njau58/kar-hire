@@ -60,11 +60,7 @@ const HowWorks = () => {
         </div>
       </div>
 
-      <div className=" rounded-full w-6 h-6 bg-red-500 absolute inset-0 top-6 left-6"></div>
-      <div className=" rounded-full w-6 h-6 bg-red-500 absolute bottom-12 "></div>
-       <div className=" rounded-full w-6 h-6 bg-red-500 absolute bottom-12 "></div>
-
-      <div className="absolute w-full h-full bg-white/30 backdrop-blur-lg   inset-0"></div>
+   
     </section>
   );
 };

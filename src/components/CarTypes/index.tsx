@@ -50,7 +50,7 @@ const CarTypes: React.FC<HandleClickProps> = ({ handleCarTypeClick }) => {
   return (
     <div
       className="grid grid-flow-col grid-rows-2 pb-3 overflow-x-auto overflow-y-hidden  py-4   lg:w-[90%]  w-full  md:grid-rows-1 gap-x-4 gap-y-8
-    hover:scrollbar-thumb-primary/80 scrollbar-thumb-rounded-lg scrollbar-track-red-50  scrollbar-thumb-primary 
+    hover:scrollbar-thumb-primary/80 scrollbar-thumb-rounded-lg scrollbar-track-gray-50  scrollbar-thumb-primary 
   scrollbar-thin"
     >
       {car_types?.map((carType, index) => {
