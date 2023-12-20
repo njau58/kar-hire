@@ -1,4 +1,4 @@
-import React from "react";
+
 import Main from "../../components/Layouts/Main";
 import CustomLink from "../../components/CustomLink";
 import { FaAngleRight } from "react-icons/fa";
