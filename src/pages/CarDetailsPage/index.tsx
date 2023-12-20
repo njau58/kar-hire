@@ -32,6 +32,7 @@ const CarDetails = () => {
     setVihicleDetails(selectedVihicle);
   }, [navigate]);
 
+  //ensures content centered in the initial mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
