@@ -28,7 +28,7 @@ list of available car types */}
 
         {/* list of all available/filtered cars */}
 
-        <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8  mt-16   max-w-6xl w-full overflow-hidden  ">
+        <div className="mx-auto grid grid-cols-1  gap-8 sm:grid-cols-2 md:grid-cols-3  mt-16   max-w-6xl w-full overflow-hidden  ">
           {filteredVihicles.length === 0 ? (
             <div
               className=" col-span-3 text-center w-full h-full  mx-auto

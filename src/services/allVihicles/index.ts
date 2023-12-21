@@ -24,6 +24,16 @@ export interface CarProps{
         image?: any;
        
       }
+
+      export const make = [
+        "Sedan",
+        "Suv",
+        "HatchBack",
+        "StationWagon",
+        "PickUp",
+        "Van",
+        "Coupe",
+      ];
    
 
 

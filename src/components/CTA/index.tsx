@@ -1,4 +1,4 @@
-import { jeep } from "../../assets/images";
+import { rav4 } from "../../assets/images";
 import SubscribeForm from "../SubscribeForm";
 
 const CTA = () => {
@@ -17,8 +17,8 @@ const CTA = () => {
           </div>
         </div>
         <img
-          className="hidden absolute h-[42rem] md:block -right-[22rem] -top-[22rem]"
-          src={jeep}
+          className="hidden absolute h-[30rem] md:block -right-[22rem] -top-[10rem]"
+          src={rav4}
           alt="jeep"
         ></img>
       </div>
