@@ -4,7 +4,7 @@ import { FaAngleRight } from "react-icons/fa";
 import vihicles, { make } from "../../services/allVihicles";
 import SingleRide from "../../components/Portifolio/SingleRide";
 import Button from "../../components/Button";
-import carTypes from "../../services/allVihicles";
+
 
 const Catalogue = () => {
   return (
