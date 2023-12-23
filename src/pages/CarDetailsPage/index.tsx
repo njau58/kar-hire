@@ -123,7 +123,7 @@ const CarDetails = () => {
           </div>
         </section>
 
-        <div className="mt-24">
+    {similarVihicles?.length>1&&    <div className="mt-24">
           <div className="flex flex-col items-center justify-center gap-2   ">
             <h2 className="text-center text-2xl  font-bold text-primary">
               Similar Vihicles
@@ -148,7 +148,7 @@ const CarDetails = () => {
           })}
             </div>
           </div>
-        </div>
+        </div>}
       </Main>
     </>
   );
