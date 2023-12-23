@@ -5,7 +5,6 @@ import vihicles, { make } from "../../services/allVihicles";
 import SingleRide from "../../components/Portifolio/SingleRide";
 import Button from "../../components/Button";
 
-
 const Catalogue = () => {
   return (
     <Main>
@@ -24,8 +23,8 @@ const Catalogue = () => {
         <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-3 gap-8  mt-16 pr-4   max-w-6xl w-full overflow-hidden ">
           {/* search form */}
 
-          <div className="border rounded-md w-full py-8 px-4  padding- h-full">
-            <form className="max-w-sm mx-auto">
+          <div className="border rounded-md w-full py-8 px-4  shadow-lg  h-full">
+            <form className="max-w-sm mx-auto  ">
               <div className="mb-5">
                 <label
                   htmlFor="vihicle_name"
@@ -88,7 +87,7 @@ const Catalogue = () => {
                     placeholder="min_price"
                     required
                   ></input>
-                     <input
+                  <input
                     type="number"
                     name="max_price"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary  block w-full p-2.5"

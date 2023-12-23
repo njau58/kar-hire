@@ -9,6 +9,7 @@ import { CiLocationOn, CiShoppingTag } from "react-icons/ci";
 import BookingForm from "../../components/BookingForm";
 import Main from "../../components/Layouts/Main";
 import { useLocation, useNavigate } from "react-router-dom";
+import SingleRide from "../../components/Portifolio/SingleRide";
 
 const CarDetails = () => {
   const router = useParams();
@@ -19,9 +20,12 @@ const CarDetails = () => {
   const [allVihicles, _] = useState<CarProps[]>(vihicles);
 
   const [vihicleDetails, setVihicleDetails] = useState<CarProps[]>([]);
+  const [similarVihicles, setSimilarVaihicles] = useState<CarProps[]>([]);
+
+  console.log(similarVihicles);
 
   //checks if Id passed in params is valid, thus vihicleDetails.length>1
- useEffect(() => {
+  useEffect(() => {
     const selectedVihicle = allVihicles.filter(
       (vihicle) => vihicle.Id === router.Id
     );
@@ -31,6 +35,17 @@ const CarDetails = () => {
 
     setVihicleDetails(selectedVihicle);
   }, [navigate]);
+
+  //sets an array of similar vihicles
+  useEffect(() => {
+    const selectedSimilarVihicle = allVihicles.filter(
+      (vihicle) => vihicle.type === allVihicles[0]?.type
+    );
+
+    setSimilarVaihicles(selectedSimilarVihicle);
+  }, []);
+
+  console.log(similarVihicles);
 
   //ensures content centered in the initial mount
   useEffect(() => {
@@ -54,7 +69,7 @@ const CarDetails = () => {
         </div>
         <hr className="mb-8"></hr>
 
-        <div className="flex flex-col items-center md:mx-auto max-w-6xl   overflow-hidden justify-center md:flex-row">
+        <section className="flex flex-col items-center md:mx-auto max-w-6xl   overflow-hidden justify-center md:flex-row">
           <div className="flex flex-col  justify-center mx-4">
             <h1 className=" font-semibold text-xl text-left">
               {vihicleDetails[0]?.vihicle_name}
@@ -96,15 +111,42 @@ const CarDetails = () => {
               </div>
               <div>
                 <div className="flex flex-col gap-4 max-w-xl mx-4 md:mx-auto ">
-                  <h1 className="font-semibold text-center">
+                  <h1 className="font-semibold text-left">
                     About {`${vihicleDetails[0]?.vihicle_name}`}
                   </h1>
-                  <p className="text-center">{allVihicles[0]?.description}</p>
+                  <p className="text-left">{allVihicles[0]?.description}</p>
                 </div>
               </div>
             </div>
 
             <hr className="w-full md:mr-0 mr-4 mt-8"></hr>
+          </div>
+        </section>
+
+        <div className="mt-24">
+          <div className="flex flex-col items-center justify-center gap-2   ">
+            <h2 className="text-center text-2xl  font-bold text-primary">
+              Similar Vihicles
+            </h2>
+            <p className=" text-gray-950 ">
+              People who viewed {vihicleDetails[0]?.vihicle_name} also consider
+            </p>
+            <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-3 gap-8  mt-16 pr-4   max-w-6xl w-full overflow-hidden ">
+            {similarVihicles?.map((vihicle) => {
+            return (
+              <SingleRide
+                Id={vihicle.Id}
+                key={vihicle.Id}
+                imageSrc={vihicle.imageSrc}
+                type={vihicle.type}
+                vihicle_name={vihicle.vihicle_name}
+                transmission_type={vihicle.transmission_type}
+                badge={vihicle.badge}
+                hire_price={vihicle.hire_price}
+              />
+            );
+          })}
+            </div>
           </div>
         </div>
       </Main>
