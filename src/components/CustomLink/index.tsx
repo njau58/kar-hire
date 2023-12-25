@@ -21,15 +21,16 @@ const CustomLink: React.FC<LinkProps> = ({ to, text, variant }) => {
       );
 
     case "unfilled":
-    return  <Link
-      className="  
+      return (
+        <Link
+          className="  
  transition-all duration-300 
 ease-in-out font-semibold hover:text-primary"
-      to={to}
-    >
-      <a>{text}</a>
-    </Link>
- 
+          to={to}
+        >
+          <a>{text}</a>
+        </Link>
+      );
   }
 };
 

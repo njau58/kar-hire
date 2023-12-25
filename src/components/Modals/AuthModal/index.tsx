@@ -44,7 +44,7 @@ const AuthModal = () => {
             <button
               className={
                 isSignUp
-                  ? "font-semibold border-b-4 border-primary transition duration-700 ease-in-out"
+                  ? "font-semibold border-b-4 bg-primary/5 px-4 py-1 transition duration-700 ease-in-out"
                   : "font-semibold  "
               }
               onClick={toggleSignUp}
@@ -55,7 +55,7 @@ const AuthModal = () => {
             <button
               className={
                 isSignIn
-                  ? "font-semibold border-b-4 border-b-primary  transition duration-700 ease-in-out"
+                  ? "font-semibold border-b-4 bg-primary/5 px-4 py-1   transition duration-700 ease-in-out"
                   : "font-semibold  "
               }
               onClick={toggleSignIn}

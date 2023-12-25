@@ -4,8 +4,34 @@ import { FaAngleRight } from "react-icons/fa";
 import vihicles, { make } from "../../services/allVihicles";
 import SingleRide from "../../components/Portifolio/SingleRide";
 import Button from "../../components/Button";
+import { useState } from "react";
 
-const Catalogue = () => {
+interface VicleSearchProps {
+  car_name:string
+  car_type:string,
+  transmission_type:string,
+  min_price:string,
+  max_price:string,
+}
+
+const Catalogue: React.FC = () => {
+  const [vihicleSearchProperties, setVihcleSearchProperties] = useState<VicleSearchProps>({
+    car_name: "",
+    car_type: "",
+    transmission_type: "",
+    min_price: "",
+    max_price: "",
+  });
+
+  const handleOnchange = (e: any) => {
+    setVihcleSearchProperties({
+      ...vihicleSearchProperties,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+
+  console.log(vihicleSearchProperties)
   return (
     <Main>
       <section className="my-32 max-w-6xl mx-4 md:mx-auto">
@@ -33,24 +59,32 @@ const Catalogue = () => {
                   Name
                 </label>
                 <input
+                  name="car_name"
+                  value={vihicleSearchProperties.car_name}
+                  onChange={handleOnchange}
                   type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5"
                   placeholder="Toyota premio"
                   required
                 />
               </div>
               <div className="mb-5">
                 <label
-                  htmlFor="vihicle_name"
+                  htmlFor="vihicle_type"
                   className="block text-start mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Type
                 </label>
-                <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary/10 accent-blacks focus:border-primary block w-full p-2.5 ">
+                <select
+                  onChange={handleOnchange}
+                  value={vihicleSearchProperties.car_type}
+                  name="car_type"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary/10 accent-blacks focus:border-primary block w-full p-2.5 "
+                >
                   <option selected>Choose type of Car</option>
                   {make?.map((car_make, index) => {
                     return (
-                      <option key={index} value={car_make}>
+                      <option key={index} >
                         {car_make}
                       </option>
                     );
@@ -64,10 +98,15 @@ const Catalogue = () => {
                 >
                   Transmission
                 </label>
-                <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary/10 accent-blacks focus:border-primary block w-full p-2.5 ">
+                <select
+                  onChange={handleOnchange}
+                  value={vihicleSearchProperties.transmission_type}
+                  name="transmission_type"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary/10 accent-blacks focus:border-primary block w-full p-2.5 "
+                >
                   <option selected>Transmission Type</option>
-                  <option value="manual">Manual</option>
-                  <option value="manual">Automatic</option>
+                  <option >Manual</option>
+                  <option >Automatic</option>
                 </select>
               </div>
               <div className="mb-5">
@@ -82,6 +121,8 @@ const Catalogue = () => {
                   <input
                     type="number"
                     name="min_price"
+                    onChange={handleOnchange}
+                    value={vihicleSearchProperties.min_price}
                     min={2000}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary  block w-full p-2.5"
                     placeholder="min_price"
@@ -90,6 +131,8 @@ const Catalogue = () => {
                   <input
                     type="number"
                     name="max_price"
+                    onChange={handleOnchange}
+                    value={vihicleSearchProperties.max_price}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary  block w-full p-2.5"
                     placeholder="max_price"
                     required

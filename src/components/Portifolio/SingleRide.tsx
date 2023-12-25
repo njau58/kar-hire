@@ -41,14 +41,16 @@ const SingleRide = ({
               <SlPeople />
             </div>
             <span className="">4</span>
-            <div className="text-white text-xs rounded-md px-1.5 py-2 absolute -top-8 bg-black hidden group-hover:flex transition duration-500 ease-in-out">Capacity</div>
+            <div className="text-white text-xs rounded-md px-1.5 py-2 absolute -top-10 bg-black hidden group-hover:flex transition duration-500 ease-in-out">Capacity
+            <span className="bg-black absolute w-3 h-3 -bottom-1 left-5 rotate-45"></span></div>
           </div>
           <div className="group relative">
             <div className="p-3 text-xl border rounded-lg">
               <FaGears />
             </div >
             <span className="">{transmission_type}</span>
-            <div className="text-white text-xs rounded-md px-1.5 py-2 absolute -top-8 -left-3.5 bg-black hidden group-hover:flex transition duration-500 ease-in-out">Transmission</div>
+            <div className="text-white text-xs rounded-md px-1.5 py-2 absolute -top-10 -left-3.5 bg-black hidden group-hover:flex transition duration-500 ease-in-out">Transmission
+            <span className="bg-black absolute w-3 h-3 -bottom-1 left-8 rotate-45"></span></div>
           </div>
 
           <div className="group relative">
@@ -56,7 +58,9 @@ const SingleRide = ({
               <IoMdSpeedometer />
             </div>
             <span className="">15km/ltr</span>
-            <div className="text-white text-xs rounded-md px-1.5 py-2 absolute -top-8 -left-3.5 bg-black hidden group-hover:flex transition duration-500 ease-in-out z-10 mb-3">Consumption</div>
+            <div className= "  text-white text-xs rounded-md px-1.5 py-2 absolute -top-10 -left-3.5 bg-black hidden group-hover:flex transition duration-500 ease-in-out z-10 mb-3">Consumption
+            <span className="bg-black absolute w-3 h-3 -bottom-1 left-8 rotate-45"></span>
+            </div>
             
           </div>
         </div>

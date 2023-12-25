@@ -40,7 +40,7 @@ const SignIn = () => {
     </div>
    
    
-   <Button text="SignUp" theme="filled"></Button>
+   <Button text="SignIn" theme="filled"></Button>
   
   </form>
 </div>;

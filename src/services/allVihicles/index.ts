@@ -131,6 +131,18 @@ export interface CarProps{
                   location:'Nairobi',
                       features:['Air Conditining', 'Tinted Windows', 'Reverse Camera', 'FM Radio']
             },
+            {
+
+              type:'StationWagon',
+                Id:uuidv4(),
+              vihicle_name:'Van TRQ',
+              transmission_type:'manual',
+              badge:'Hire',
+              hire_price:4000,
+                  imageSrc:[porche, porche, porche],
+                location:'Nairobi',
+                    features:['Air Conditining', 'Tinted Windows', 'Reverse Camera', 'FM Radio']
+          },
 
         ]
 

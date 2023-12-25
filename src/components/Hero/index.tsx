@@ -1,17 +1,11 @@
-
 import { range } from "../../assets/images";
 import Button from "../Button";
 import CustomLink from "../CustomLink";
-
-
-
-
-
-// interface HeroImage{
-//   range:string
-// }
+import { useContext } from "react";
+import { AuthModalContext } from "../../Context/AuthModalToggleContext";
 
 const Hero: React.FC = () => {
+  const { toggleAuthModal } = useContext(AuthModalContext);
   return (
     <section className=" relative md:mt-44 mt-32  w-full  ">
       <div className="max-w-6xl md:mx-auto  flex md:flex-row justify-between mx-4 flex-col ">
@@ -22,23 +16,30 @@ const Hero: React.FC = () => {
           </div>
           <h1 className="text-gray-950 max-w-sm md:max-w-xl font-bold text-3xl md:text-5xl leading-normal text-start">
             {" "}
-            Hire Your Ride  Across Kenya With Us
+            Hire Your Ride Across Kenya With Us
           </h1>
           <p className="text-gray-700 lg:max-w-xl max-w-sm text-start text-sm lg:text-base">
-            Drive your dreams with our hassle-free car rental service-Where every journey begins with convinience and ends with satisfaction.
-      
+            Drive your dreams with our hassle-free car rental service-Where
+            every journey begins with convinience and ends with satisfaction.
           </p>
           <div className="flex flex-row gap-4 w-full max-w-sm">
-            <CustomLink variant="filled" text="Hire Your Ride" to='all-vihicles' />
-            <Button theme="outlined" text="Become A Partner" />
+            <CustomLink
+              variant="filled"
+              text="Hire Your Ride"
+              to="all-vihicles"
+            />
+            <Button
+              theme="outlined"
+              text="Become A Partner"
+              onClick={toggleAuthModal}
+            />
           </div>
         </div>
 
-       <div className=" ">
-        <img alt="range" src={range} className="w-full h-full object-cover"  />
-       </div>
+        <div className=" ">
+          <img alt="range" src={range} className="w-full h-full object-cover" />
+        </div>
       </div>
-     
     </section>
   );
 };

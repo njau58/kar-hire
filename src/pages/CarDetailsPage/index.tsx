@@ -22,9 +22,7 @@ const CarDetails = () => {
   const [vihicleDetails, setVihicleDetails] = useState<CarProps[]>([]);
   const [similarVihicles, setSimilarVaihicles] = useState<CarProps[]>([]);
 
-  console.log(similarVihicles);
-
-  //checks if Id passed in params is valid, thus vihicleDetails.length>1
+  //checks if Id passed in params is valid, thus vihicleDetails.length>0
   useEffect(() => {
     const selectedVihicle = allVihicles.filter(
       (vihicle) => vihicle.Id === router.Id
@@ -39,7 +37,7 @@ const CarDetails = () => {
   //sets an array of similar vihicles
   useEffect(() => {
     const selectedSimilarVihicle = allVihicles.filter(
-      (vihicle) => vihicle.type === allVihicles[0]?.type
+      (vihicle) => vihicle.type === vihicleDetails[0]?.type
     );
 
     setSimilarVaihicles(selectedSimilarVihicle);
@@ -123,32 +121,35 @@ const CarDetails = () => {
           </div>
         </section>
 
-    {similarVihicles?.length>1&&    <div className="mt-24">
-          <div className="flex flex-col items-center justify-center gap-2   ">
-            <h2 className="text-center text-2xl  font-bold text-primary">
-              Similar Vihicles
-            </h2>
-            <p className=" text-gray-950 ">
-              People who viewed {vihicleDetails[0]?.vihicle_name} also consider
-            </p>
-            <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-3 gap-8  mt-16 pr-4   max-w-6xl w-full overflow-hidden ">
-            {similarVihicles?.map((vihicle) => {
-            return (
-              <SingleRide
-                Id={vihicle.Id}
-                key={vihicle.Id}
-                imageSrc={vihicle.imageSrc}
-                type={vihicle.type}
-                vihicle_name={vihicle.vihicle_name}
-                transmission_type={vihicle.transmission_type}
-                badge={vihicle.badge}
-                hire_price={vihicle.hire_price}
-              />
-            );
-          })}
+        {similarVihicles?.length > 0 && (
+          <div className="mt-24">
+            <div className="flex flex-col items-center justify-center gap-2   ">
+              <h2 className="text-center text-2xl  font-bold text-primary">
+                Similar Vihicles
+              </h2>
+              <p className=" text-gray-950 ">
+                People who viewed {vihicleDetails[0]?.vihicle_name} also
+                consider
+              </p>
+              <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-3 gap-8  mt-16 pr-4   max-w-6xl w-full overflow-hidden ">
+                {similarVihicles?.map((vihicle) => {
+                  return (
+                    <SingleRide
+                      Id={vihicle.Id}
+                      key={vihicle.Id}
+                      imageSrc={vihicle.imageSrc}
+                      type={vihicle.type}
+                      vihicle_name={vihicle.vihicle_name}
+                      transmission_type={vihicle.transmission_type}
+                      badge={vihicle.badge}
+                      hire_price={vihicle.hire_price}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>}
+        )}
       </Main>
     </>
   );
