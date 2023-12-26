@@ -4,6 +4,8 @@ import Button from "../Button";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useState } from "react";
+import { GrShareOption } from "react-icons/gr";
+import { IoCopyOutline } from "react-icons/io5";
 import { useParams } from "react-router";
 
 type ValuePiece = Date | null;
@@ -23,6 +25,25 @@ const BookingForm = ({ hire_price }: any) => {
   const [isPickUpDateOpen, setPickUpDate] = useState<boolean>(false);
   const [isReturnDateOpen, setReturnDate] = useState<boolean>(false);
 
+  const [pickUpDate, setPickUpDateValue] = useState<Value>();
+  const [returnDate, setReturnDateValue] = useState<Value>();
+  const [isShare, setIsShare] = useState<boolean>(false);
+
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+
+  const toggleShare = () => {
+    setIsShare((prev) => !prev);
+  };
+
+  //copies to clipboard
+  const copyLink = () => {
+    setIsCopied(true)
+    setTimeout(() => {
+      navigator.clipboard.writeText(window.location.href);
+      setIsCopied(false)
+    }, 1500);
+  };
+
   const togglePickUpDate = () => {
     setPickUpDate((prev) => !prev);
     setReturnDate(false);
@@ -31,9 +52,6 @@ const BookingForm = ({ hire_price }: any) => {
     setReturnDate((prev) => !prev);
     setPickUpDate(false);
   };
-
-  const [pickUpDate, setPickUpDateValue] = useState<Value>();
-  const [returnDate, setReturnDateValue] = useState<Value>();
 
   const [bookingDetails, setBookingDetails] = useState<BookingDetailsProps>({
     vihicle_id: Id,
@@ -60,14 +78,14 @@ const BookingForm = ({ hire_price }: any) => {
   return (
     <div className="w-auto relative h-auto ">
       <div className="mt-12  max-w-4xl mx-auto w-full h-[30rem]  ">
-        <div className="  flex flex-col   items-center gap-9 py-8  justify-center h-full  w-full  border rounded-md bg-white">
+        <div className="  flex flex-col   items-center gap-6 pt-12  justify-center h-full  w-full  border rounded-md  px-4 ">
           <div className="absolute top-4 left-4 flex flex-row items-center justify-center gap-2">
             <p className="text-xs">From</p>
-            <p className="text-gray-900 font-semibold texxt-xl">
+            <p className="text-gray-900 font-semibold text-xl">
               KES {hire_price} /day
             </p>
           </div>
-          <div className="  flex flex-row  items-center gap-2 justify-center  lg:px-2">
+          <div className="  flex flex-row  items-center gap-2 justify-center  w-full ">
             <select
               id="location"
               name="location"
@@ -82,7 +100,7 @@ const BookingForm = ({ hire_price }: any) => {
           </div>
           <div
             onClick={togglePickUpDate}
-            className="flex  cursor-pointer flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5"
+            className="flex  cursor-pointer flex-row bg-gray-50 w-full  border border-gray-300  items-center gap-2 justify-between  md:px-2  max-w-56 rounded-md p-2.5"
           >
             <span className="text-primary">
               <SlCalender />
@@ -98,7 +116,7 @@ const BookingForm = ({ hire_price }: any) => {
               <FaAngleDown />
             </span>
           </div>
-          <div className="absolute top-[13.8rem] md:top-[13.8rem] bg-white z-20">
+          <div className="absolute top-[11.7rem] md:top-[11.7rem] bg-white z-20">
             {isPickUpDateOpen && (
               <Calendar
                 value={pickUpDate}
@@ -108,7 +126,7 @@ const BookingForm = ({ hire_price }: any) => {
           </div>
           <div
             onClick={toggleReturnDate}
-            className="flex cursor-pointer flex-row bg-gray-50  border border-gray-300  items-center gap-2 justify-center  md:px-2  max-w-56 rounded-md p-2.5"
+            className="flex cursor-pointer flex-row bg-gray-50  border border-gray-300  w-full items-center  gap-2 justify-between  md:px-2  max-w-56 rounded-md p-2.5"
           >
             <span className="text-primary">
               <SlCalender />
@@ -124,7 +142,7 @@ const BookingForm = ({ hire_price }: any) => {
               <FaAngleDown />
             </span>
           </div>
-          <div className="absolute top-[18.9rem] md:top-[18.9rem] bg-white z-20">
+          <div className="absolute top-[16.1rem] md:top-[16.09rem] bg-white z-20">
             {isReturnDateOpen && (
               <Calendar
                 value={returnDate}
@@ -132,9 +150,33 @@ const BookingForm = ({ hire_price }: any) => {
               />
             )}
           </div>
-          <div className=" max-w-xs">
+          <div className=" w-full">
             <Button text="Book Your Ride" theme="filled"></Button>
           </div>
+          <div
+            onClick={toggleShare}
+            className="text-sm text-center border rounded-lg px-4  py-2 cursor-pointer hover:bg-slate-100"
+          >
+            <span className="inline-block  pr-1.5 text-lg">
+              <GrShareOption />
+            </span>{" "}
+            Share
+          </div>
+          {isShare && (
+            <div
+              onClick={copyLink}
+              className=" bottom-1 absolute shadow-md border  bg-white rounded-md"
+            >
+              <div className=" group flex flex-row items-center gap-4 rounded-md px-6 py-3 cursor-pointer hover:bg-slate-100">
+                <span className="text-sm">
+                  {isCopied ? "Copied Link!" : "Copy Link"}
+                </span>
+                <span className="group-hover:scale-125">
+                  <IoCopyOutline />
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
