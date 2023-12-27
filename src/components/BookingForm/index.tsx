@@ -1,4 +1,4 @@
-import { FaAngleDown, FaQuestionCircle, FaRegQuestionCircle } from "react-icons/fa";
+import { FaAngleDown,FaRegQuestionCircle } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import Button from "../Button";
 import Calendar from "react-calendar";
