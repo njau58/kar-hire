@@ -88,7 +88,7 @@ const BookingForm = ({ hire_price }: any) => {
           </div>
           <div className="absolute group top-4 right-4 ">
             <FaRegQuestionCircle/>
-            <div className=" hidden  bg-black text-white p-4 pt-8 w-56 text-sm z-20 right-2 -top-[7.7rem] md:-top-[7.5rem] group-hover:flex gap-4 flex-col  absolute">
+            <div className=" hidden  bg-black text-white p-4 pt-8 w-56 text-sm z-40 right-2 -top-[7.7rem] md:-top-[7.5rem] group-hover:flex gap-4 flex-col  absolute">
             
               <p>Pick-up Time: <span className="font-semibold ">9.00 AM</span></p>
               <p>Return Time: <span  className="font-semibold">12.00 NOON</span>(the following day)</p>
