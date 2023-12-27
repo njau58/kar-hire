@@ -10,14 +10,14 @@ interface ComponentProps {
 
 const Main: React.FC<ComponentProps> = ({ children }) => {
   return (
-    <>
+    <main>
       <NavBar />
 
       {children}
       <AuthModal/>
       <ChatWidget/>
       <Footer />
-    </>
+    </main>
   );
 };
 

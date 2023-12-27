@@ -5,6 +5,7 @@ import ErrorElement from "./components/ErrorElement";
 
 import CarDetailsPage from "./pages/CarDetailsPage";
 import Catalogue from "./pages/AllVihicles";
+import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
   {
     path: "/all-vihicles",
     element: <Catalogue />,
+    errorElement: <ErrorElement />,
+  },
+  {
+    path: "/about-us",
+    element: <About />,
     errorElement: <ErrorElement />,
   },
 
