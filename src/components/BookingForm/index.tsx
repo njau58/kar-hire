@@ -116,7 +116,7 @@ const BookingForm = ({ hire_price }: any) => {
               <FaAngleDown />
             </span>
           </div>
-          <div className="absolute top-[11.7rem] md:top-[11.7rem] bg-white z-20">
+          <div className="absolute top-[13.9rem]  bg-white z-20">
             {isPickUpDateOpen && (
               <Calendar
                 value={pickUpDate}
@@ -142,7 +142,7 @@ const BookingForm = ({ hire_price }: any) => {
               <FaAngleDown />
             </span>
           </div>
-          <div className="absolute top-[16.1rem] md:top-[16.09rem] bg-white z-20">
+          <div className="absolute top-[18.3rem] md:top-[18.2rem] bg-white z-20">
             {isReturnDateOpen && (
               <Calendar
                 value={returnDate}
