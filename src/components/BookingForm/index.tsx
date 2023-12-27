@@ -1,4 +1,4 @@
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleDown, FaQuestionCircle, FaRegQuestionCircle } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import Button from "../Button";
 import Calendar from "react-calendar";
@@ -7,16 +7,17 @@ import { useState } from "react";
 import { GrShareOption } from "react-icons/gr";
 import { IoCopyOutline } from "react-icons/io5";
 import { useParams } from "react-router";
+import moment from "moment";
 
-type ValuePiece = Date | null;
+// type ValuePiece = Date | null;
 
-type Value = ValuePiece | [ValuePiece, ValuePiece];
+// type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 interface BookingDetailsProps {
   vihicle_id: string | undefined;
   location: string;
-  return_date?: Value;
-  pickup_date?: Value;
+  return_date?: string;
+  pickup_date?: string;
 }
 
 const BookingForm = ({ hire_price }: any) => {
@@ -25,8 +26,8 @@ const BookingForm = ({ hire_price }: any) => {
   const [isPickUpDateOpen, setPickUpDate] = useState<boolean>(false);
   const [isReturnDateOpen, setReturnDate] = useState<boolean>(false);
 
-  const [pickUpDate, setPickUpDateValue] = useState<Value>();
-  const [returnDate, setReturnDateValue] = useState<Value>();
+  const [pickUpDate, setPickUpDateValue] = useState<string>();
+  const [returnDate, setReturnDateValue] = useState<string>();
   const [isShare, setIsShare] = useState<boolean>(false);
 
   const [isCopied, setIsCopied] = useState<boolean>(false);
@@ -37,10 +38,10 @@ const BookingForm = ({ hire_price }: any) => {
 
   //copies to clipboard
   const copyLink = () => {
-    setIsCopied(true)
+    setIsCopied(true);
     setTimeout(() => {
       navigator.clipboard.writeText(window.location.href);
-      setIsCopied(false)
+      setIsCopied(false);
     }, 1500);
   };
 
@@ -85,6 +86,16 @@ const BookingForm = ({ hire_price }: any) => {
               KES {hire_price} /day
             </p>
           </div>
+          <div className="absolute group top-4 right-4 ">
+            <FaRegQuestionCircle/>
+            <div className=" hidden  bg-black text-white p-4 pt-8 w-56 text-sm z-20 right-2 -top-[7rem] md:-top-[7.5rem] group-hover:flex gap-4 flex-col  absolute">
+            
+              <p>Pick-up Time: <span className="font-semibold ">9.00 AM</span></p>
+              <p>Return Time: <span  className="font-semibold">12.00 NOON</span>(the following day)</p>
+          </div>
+         
+
+          </div>
           <div className="  flex flex-row  items-center gap-2 justify-center  w-full ">
             <select
               id="location"
@@ -105,7 +116,10 @@ const BookingForm = ({ hire_price }: any) => {
             <span className="text-primary">
               <SlCalender />
             </span>
-            <p className="text-gray-900"> Pick Up Date</p>
+            <p className="text-gray-900">
+              {" "}
+           <span className=" pr-2"> PickUp-Date</span> <span className="text-xs font-semibold"> {moment(pickUpDate).format("YYYY-MM-DD")}</span> 
+            </p>
             <span
               className={`${
                 isPickUpDateOpen
@@ -131,7 +145,9 @@ const BookingForm = ({ hire_price }: any) => {
             <span className="text-primary">
               <SlCalender />
             </span>
-            <p className="text-gray-900">Return Date</p>
+            <p className="text-gray-900">
+            <span className=" pr-2"> Return-Date</span> <span className="text-xs font-semibold"> {moment(returnDate).format("YYYY-MM-DD")}</span> 
+            </p>
             <span
               className={`${
                 isReturnDateOpen
