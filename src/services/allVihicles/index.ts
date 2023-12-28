@@ -49,7 +49,7 @@ export interface CarProps{
                 transmission_type:'manual',
                 badge:'Hire',
                 hire_price:4000,
-                imageSrc:[porche,porche,porche],
+                imageSrc:[porche,porche,porche ,porche,porche,porche],
                 location:'Nairobi',
                 features:['Air Conditining', 'Tinted Windows', 'Reverse Camera', 'FM Radio'],
                 description:`The Toyota Noah is one of our two types of people movers in stock. It has a spacious interior, versatile seating configurations, comfortable features, advanced safety technologies, and sleek design. It can accommodate families, provide ample cargo space, and offer a smooth and enjoyable driving experience.

@@ -7,21 +7,22 @@ import Button from "../../components/Button";
 import { useState } from "react";
 
 interface VicleSearchProps {
-  car_name:string
-  car_type:string,
-  transmission_type:string,
-  min_price:string,
-  max_price:string,
+  car_name: string;
+  car_type: string;
+  transmission_type: string;
+  min_price: string;
+  max_price: string;
 }
 
 const Catalogue: React.FC = () => {
-  const [vihicleSearchProperties, setVihcleSearchProperties] = useState<VicleSearchProps>({
-    car_name: "",
-    car_type: "",
-    transmission_type: "",
-    min_price: "",
-    max_price: "",
-  });
+  const [vihicleSearchProperties, setVihcleSearchProperties] =
+    useState<VicleSearchProps>({
+      car_name: "",
+      car_type: "",
+      transmission_type: "",
+      min_price: "",
+      max_price: "",
+    });
 
   const handleOnchange = (e: any) => {
     setVihcleSearchProperties({
@@ -30,8 +31,6 @@ const Catalogue: React.FC = () => {
     });
   };
 
-
-  console.log(vihicleSearchProperties)
   return (
     <Main>
       <section className="my-32 max-w-6xl mx-4 md:mx-auto">
@@ -46,7 +45,7 @@ const Catalogue: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-3 gap-8  mt-16 pr-4   max-w-6xl w-full overflow-hidden ">
+        <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-3 gap-8  mt-16    max-w-6xl w-full overflow-hidden ">
           {/* search form */}
 
           <div className="border rounded-md w-full py-8 px-4  shadow-lg  h-full">
@@ -83,11 +82,7 @@ const Catalogue: React.FC = () => {
                 >
                   <option selected>Choose type of Car</option>
                   {make?.map((car_make, index) => {
-                    return (
-                      <option key={index} >
-                        {car_make}
-                      </option>
-                    );
+                    return <option key={index}>{car_make}</option>;
                   })}
                 </select>
               </div>
@@ -105,8 +100,8 @@ const Catalogue: React.FC = () => {
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary/10 accent-blacks focus:border-primary block w-full p-2.5 "
                 >
                   <option selected>Transmission Type</option>
-                  <option >Manual</option>
-                  <option >Automatic</option>
+                  <option>Manual</option>
+                  <option>Automatic</option>
                 </select>
               </div>
               <div className="mb-5">

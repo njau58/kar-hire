@@ -80,7 +80,7 @@ const BookingForm = ({ hire_price }: any) => {
   console.log(Number(moment(new Date()).format("x")));
 
   return (
-    <div className="w-auto relative h-auto ">
+    <div className="w-auto relative h-auto  ">
       <div className="mt-12  max-w-4xl mx-auto w-full h-[30rem]  ">
         <div className="  flex flex-col   items-center gap-6 pt-12  justify-center h-full  w-full  border rounded-md  px-4 ">
           <div className="absolute top-4 left-4 flex flex-row items-center justify-center gap-2">
@@ -91,7 +91,7 @@ const BookingForm = ({ hire_price }: any) => {
           </div>
           <div className="absolute group top-4 right-4 ">
             <FaRegQuestionCircle />
-            <div className=" hidden  bg-black text-white p-4 pt-8 w-56 text-sm z-40 right-2 -top-[7.7rem] md:-top-[7.5rem] group-hover:flex gap-4 flex-col  absolute">
+            <div className=" hidden  bg-black text-white p-4 pt-8 w-56 text-sm z-20 right-2 -top-[7.7rem] md:-top-[7.5rem] group-hover:flex gap-4 flex-col  absolute">
               <p>
                 Pick-up Time: <span className="font-semibold ">9.00 AM</span>
               </p>
