@@ -139,8 +139,9 @@ const Catalogue: React.FC = () => {
               <Button theme="filled" text="Search"></Button>
             </form>
           </div>
-
-          {vihicles?.map((vihicle) => {
+<div className="pr-4"
+>
+{vihicles?.map((vihicle) => {
             return (
               <SingleRide
                 Id={vihicle.Id}
@@ -154,6 +155,8 @@ const Catalogue: React.FC = () => {
               />
             );
           })}
+</div>
+      
         </div>
       </section>
     </Main>
