@@ -33,7 +33,7 @@ const Catalogue: React.FC = () => {
 
   return (
     <Main>
-      <section className="my-32 max-w-6xl mx-4 md:mx-auto">
+      <section className="my-32 max-w-6xl  md:mx-auto mx-4">
         <div className="flex flex-row items-center gap-2 justify-between my-4  w-full ">
           <CustomLink to="/" text="Home" variant="unfilled" />
           <span>
@@ -139,25 +139,23 @@ const Catalogue: React.FC = () => {
               <Button theme="filled" text="Search"></Button>
             </form>
           </div>
-<div className="pr-4"
->
-{vihicles?.map((vihicle) => {
-            return (
-              <SingleRide
-                Id={vihicle.Id}
-                key={vihicle.Id}
-                imageSrc={vihicle.imageSrc}
-                type={vihicle.type}
-                vihicle_name={vihicle.vihicle_name}
-                transmission_type={vihicle.transmission_type}
-                badge={vihicle.badge}
-                hire_price={vihicle.hire_price}
-              />
-            );
-          })}
-</div>
-      
-        </div>
+     
+            {vihicles?.map((vihicle) => {
+              return (
+                <SingleRide
+                  Id={vihicle.Id}
+                  key={vihicle.Id}
+                  imageSrc={vihicle.imageSrc}
+                  type={vihicle.type}
+                  vihicle_name={vihicle.vihicle_name}
+                  transmission_type={vihicle.transmission_type}
+                  badge={vihicle.badge}
+                  hire_price={vihicle.hire_price}
+                />
+              );
+            })}
+          </div>
+     
       </section>
     </Main>
   );
