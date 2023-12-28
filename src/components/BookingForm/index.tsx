@@ -1,4 +1,4 @@
-import { FaAngleDown,FaRegQuestionCircle } from "react-icons/fa";
+import { FaAngleDown, FaRegQuestionCircle } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import Button from "../Button";
 import Calendar from "react-calendar";
@@ -76,6 +76,9 @@ const BookingForm = ({ hire_price }: any) => {
     setReturnDateValue(value);
   };
 
+  console.log(Number(moment(new Date()).format("x")) + 12 * 60 * 60 * 60);
+  console.log(Number(moment(new Date()).format("x")));
+
   return (
     <div className="w-auto relative h-auto ">
       <div className="mt-12  max-w-4xl mx-auto w-full h-[30rem]  ">
@@ -87,14 +90,16 @@ const BookingForm = ({ hire_price }: any) => {
             </p>
           </div>
           <div className="absolute group top-4 right-4 ">
-            <FaRegQuestionCircle/>
+            <FaRegQuestionCircle />
             <div className=" hidden  bg-black text-white p-4 pt-8 w-56 text-sm z-40 right-2 -top-[7.7rem] md:-top-[7.5rem] group-hover:flex gap-4 flex-col  absolute">
-            
-              <p>Pick-up Time: <span className="font-semibold ">9.00 AM</span></p>
-              <p>Return Time: <span  className="font-semibold">12.00 NOON</span>(the following day)</p>
-          </div>
-         
-
+              <p>
+                Pick-up Time: <span className="font-semibold ">9.00 AM</span>
+              </p>
+              <p>
+                Return Time: <span className="font-semibold">12.00 NOON</span>
+                (the following day)
+              </p>
+            </div>
           </div>
           <div className="  flex flex-row  items-center gap-2 justify-center  w-full ">
             <select
@@ -118,7 +123,15 @@ const BookingForm = ({ hire_price }: any) => {
             </span>
             <p className="text-gray-900">
               {" "}
-           <span className=" pr-2"> PickUp-Date</span> <span className="text-xs font-semibold"> {moment(pickUpDate).format("YYYY-MM-DD")}</span> 
+              <span className=" pr-2"> PickUp-Date</span>{" "}
+              <span className="text-xs font-semibold">
+                {Number(moment(pickUpDate).format("x")) >=
+               ( Number(moment(new Date()).format("x"))-(1000 * 60 * 60 * 24))? (
+                  moment(pickUpDate).format("YYYY-MM-DD")
+                ) : (
+                   <span className="text-red-500">Error!Date must be in the future </span>
+                )}
+              </span>
             </p>
             <span
               className={`${
@@ -146,7 +159,15 @@ const BookingForm = ({ hire_price }: any) => {
               <SlCalender />
             </span>
             <p className="text-gray-900">
-            <span className=" pr-2"> Return-Date</span> <span className="text-xs font-semibold"> {moment(returnDate).format("YYYY-MM-DD")}</span> 
+              <span className=" pr-2"> Return-Date</span>{" "}
+              <span className="text-xs font-semibold">
+                {Number(moment(returnDate).format("x")) >=
+               ( Number(moment(new Date()).format("x")))? (
+                  moment(returnDate).format("YYYY-MM-DD")
+                ) : (
+                   <span className="text-red-500">Error!Date must be in the future </span>
+                )}
+              </span>
             </p>
             <span
               className={`${
