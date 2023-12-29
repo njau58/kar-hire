@@ -26,14 +26,13 @@ const router = createBrowserRouter([
 
   {
     path: "/car-details/:Id",
-    element:  <CarDetailsPage />,
+    element: <CarDetailsPage />,
   },
 ]);
 
 function App() {
   return (
     <>
-
       <RouterProvider router={router} />
     </>
   );

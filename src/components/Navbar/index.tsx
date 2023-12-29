@@ -7,15 +7,17 @@ import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../utils/responsive";
 import MobileMenu from "./MobileMenu";
 import Button from "../Button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthModalContext } from "../../Context/AuthModalToggleContext";
 import { useContext } from "react";
+import { MdAlternateEmail } from "react-icons/md";
 const NavBar = () => {
   const [nav_items, setNavItems] = useState<Item[]>([]);
   const [activeMenu, setActiveMenu] = useState<Boolean>(false);
   const [scrollThreshold, setScrollThreshold] = useState<Boolean>(false);
+  const navigate = useNavigate();
 
-  const { toggleAuthModal} = useContext(AuthModalContext);
+  const { toggleAuthModal } = useContext(AuthModalContext);
 
   //checks for when scrolled 100px on y-axis
 
@@ -37,6 +39,10 @@ const NavBar = () => {
 
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
+  const handleNavItemClick = (href: string) => {
+    navigate(`${href}`);
+  };
+
   return (
     <>
       {activeMenu && isMobile && <MobileMenu setActiveMenu={setActiveMenu} />}
@@ -55,9 +61,13 @@ const NavBar = () => {
             <ul className="flex flex-row gap-9  items-center justify-center">
               {nav_items.map((item: Item) => {
                 return (
-                  <Link className={item.styles} key={item.name} to={item.href}>
+                  <li
+                    onClick={() => handleNavItemClick(item.href)}
+                    className={item.styles}
+                    key={item.name}
+                  >
                     {item.name}
-                  </Link>
+                  </li>
                 );
               })}
             </ul>

@@ -22,13 +22,13 @@ const generateNavItems = (): Item[] => {
     {
       name: "About Us",
       
-      href: "about-us",
+      href: "/about-us",
       styles: itemStyles,
     },
     {
       name: "Available Vihicles",
       
-      href: "all-vihicles",
+      href: "/all-vihicles",
       styles: itemStyles,
     },
  

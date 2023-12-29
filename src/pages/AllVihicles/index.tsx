@@ -139,23 +139,22 @@ const Catalogue: React.FC = () => {
               <Button theme="filled" text="Search"></Button>
             </form>
           </div>
-     
-            {vihicles?.map((vihicle) => {
-              return (
-                <SingleRide
-                  Id={vihicle.Id}
-                  key={vihicle.Id}
-                  imageSrc={vihicle.imageSrc}
-                  type={vihicle.type}
-                  vihicle_name={vihicle.vihicle_name}
-                  transmission_type={vihicle.transmission_type}
-                  badge={vihicle.badge}
-                  hire_price={vihicle.hire_price}
-                />
-              );
-            })}
-          </div>
-     
+
+          {vihicles?.map((vihicle) => {
+            return (
+              <SingleRide
+                Id={vihicle.Id}
+                key={vihicle.Id}
+                imageSrc={vihicle.imageSrc}
+                type={vihicle.type}
+                vihicle_name={vihicle.vihicle_name}
+                transmission_type={vihicle.transmission_type}
+                badge={vihicle.badge}
+                hire_price={vihicle.hire_price}
+              />
+            );
+          })}
+        </div>
       </section>
     </Main>
   );
