@@ -10,7 +10,6 @@ import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import { AuthModalContext } from "../../Context/AuthModalToggleContext";
 import { useContext } from "react";
-import { MdAlternateEmail } from "react-icons/md";
 const NavBar = () => {
   const [nav_items, setNavItems] = useState<Item[]>([]);
   const [activeMenu, setActiveMenu] = useState<Boolean>(false);
