@@ -53,7 +53,7 @@ const CarDetails = () => {
   return (
     <>
       <Main>
-        <div className="w-full   flex flex-col  gap-6 mt-24 py-1 md:py-3 mx-4 max-w-6xl md:mx-auto">
+        <div className="w-full   flex flex-col  gap-6 mt-24 py-1 md:py-3 mx-4 max-w-7xl md:mx-auto">
           <div className="flex flex-row items-center gap-2 justify-between my-4  w-full ">
             <CustomLink to="/" text="Home" variant="unfilled" />
             <span>
@@ -67,7 +67,7 @@ const CarDetails = () => {
         </div>
         <hr className="mb-8"></hr>
 
-        <section className="flex flex-col items-center md:mx-auto max-w-6xl   overflow-hidden justify-center md:flex-row">
+        <section className="flex flex-col items-center md:mx-auto max-w-7xl   overflow-hidden justify-center md:flex-row">
           <div className="flex flex-col  justify-center mx-4">
             <h1 className=" font-semibold text-xl text-left">
               {vihicleDetails[0]?.vihicle_name}
@@ -131,7 +131,7 @@ const CarDetails = () => {
                 People who viewed {vihicleDetails[0]?.vihicle_name} also
                 consider
               </p>
-              <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-3 gap-8  mt-16 pr-4   max-w-6xl w-full overflow-hidden ">
+              <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-3 gap-8  mt-16 pr-4   max-w-7xl w-full overflow-hidden ">
                 {similarVihicles?.map((vihicle) => {
                   return (
                     <SingleRide

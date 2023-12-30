@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const { toggleAuthModal } = useContext(AuthModalContext);
   return (
     <section className=" relative md:mt-44 mt-32  w-full  ">
-      <div className="max-w-6xl md:mx-auto  flex md:flex-row justify-between mx-4 flex-col ">
+      <div className="max-w-7xl md:mx-auto  flex md:flex-row justify-between mx-4 flex-col ">
         <div className="flex relative z-30 flex-col items-start md:gap-8 gap-4 ">
           <div className="flex flex-row items-center justify-center gap-1">
             <hr className="w-6 bg-gray-900 h-0.5"></hr>

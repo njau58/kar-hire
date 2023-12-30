@@ -16,7 +16,7 @@ const Portifolio: React.FC = () => {
   };
 
   return (
-    <section className=" relative  my-24 max-w-6xl lg:mx-auto px-4 flex items-center justify-center overflow-hidden">
+    <section className=" relative  py-24 max-w-7xl lg:mx-auto px-4 flex items-center justify-center overflow-hidden">
       <div className="flex flex-col items-center justify-center gap-4   w-full mx-auto  ">
         <p className="text-center font-bold text-primary">Choose Your Ride</p>
         <h2 className="text-3xl text-gray-950 font-bold g:text-5xl">
@@ -28,11 +28,11 @@ list of available car types */}
 
         {/* list of all available/filtered cars */}
 
-        <div className="mx-auto grid grid-cols-1  gap-8 sm:grid-cols-2 md:grid-cols-3  mt-16   max-w-6xl w-full overflow-hidden  ">
+        <div className="mx-auto grid grid-cols-1  gap-8 sm:grid-cols-2 md:grid-cols-4  mt-16   max-w-7xl w-full overflow-hidden  ">
           {filteredVihicles.length === 0 ? (
             <div
               className=" col-span-3 text-center w-full h-full  mx-auto
-            mb-16   max-w-6xl"
+            mb-16   max-w-7xl"
             >
               <p className="text-center ">
                 No Vihicle(s) of the selected type at the moment.

@@ -19,11 +19,11 @@ const SingleRide = ({
 
   return (
     <div className="shadow-lg  relative  rounded-lg border bg-white max-w-lg mx-auto  w-full  ">
-      <div className="h-[18rem] ">
+      <div className="h-[10rem]  p-1 rounded-md ">
         <div className="absolute right-0">
           <Badge variant={badge} />
         </div>
-        <div className=" overflow-hidden h-full w-full">
+        <div className=" overflow-hidden rounded-md h-full w-full">
           <img
             src={imageSrc[0]}
             decoding="async"

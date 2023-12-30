@@ -33,7 +33,7 @@ const Catalogue: React.FC = () => {
 
   return (
     <Main>
-      <section className="my-32 max-w-6xl  md:mx-auto mx-4">
+      <section className="my-32 max-w-7xl   md:mx-auto mx-4">
         <div className="flex flex-row items-center gap-2 justify-between my-4  w-full ">
           <CustomLink to="/" text="Home" variant="unfilled" />
           <span>
@@ -45,7 +45,7 @@ const Catalogue: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-3 gap-8  mt-16    max-w-6xl w-full overflow-hidden ">
+        <div className="grid grid-flow-cols sm:grid-cols-2 md:grid-cols-4 gap-8  mt-16     w-full overflow-hidden ">
           {/* search form */}
 
           <div className="border rounded-md w-full py-8 px-4  shadow-lg  h-full">

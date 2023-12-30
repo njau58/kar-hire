@@ -50,7 +50,7 @@ const NavBar = () => {
           scrollThreshold ? "shadow-sm bg-white  " : ""
         } w-full fixed   px-4  top-0  z-40 transition duration-700 ease-in-out shadow-md `}
       >
-        <div className="flex flex-row   py-8  mx-auto justify-between items-center  max-w-6xl  ">
+        <div className="flex flex-row   py-8  mx-auto justify-between items-center  max-w-7xl  ">
           <Logo />
           {isMobile ? (
             <>
